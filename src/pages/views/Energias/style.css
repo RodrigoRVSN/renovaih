@@ -1,0 +1,98 @@
+:root{
+    --pink: #f72585;
+    --purple: #7209b7;
+    --dark-blue: #3a0ca3;
+    --blue: #4361ee;
+    --cyan: #4cc9f0;
+}
+
+*{
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+
+/*-----------------------CONTEÚDO------------------------------*/
+.box-sust{
+    background-color:rgb(245, 244, 244, 0.5);
+    
+}
+
+#planeta{
+    width: 50%;
+}
+
+#desenvol{
+    width: 40%;
+}
+
+.imglin{
+    width: 100px;
+}
+
+.imglin:hover{
+    transition: ease-in 0.2s;
+    transform: scale(1.07);
+}
+
+.imglin:not(hover){
+    transition: ease-in 0.2s;
+    transform: scale(1.0);
+}
+
+.cardimg:hover{
+    transition: ease-in 0.2s;
+    transform: scale(1.07);
+}
+.cardimg:not(hover){
+    transition: ease-in 0.2s;
+    transform: scale(1.0);
+}
+
+.col{
+    padding: 8px;
+}
+
+.box-sust{
+    background-color:rgb(245, 244, 244, 0.5);
+    
+}
+
+.card-title{
+    font-family: 'Modak', cursive;
+    font-size: 30px;
+    text-shadow: 4px 2px 2px #bdbdbd;
+    color:#3a0ca3;
+}
+
+.card-text{
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    color: var(--cyan);
+    background-color: var(--purple);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px var(--pink);
+}
+
+.card-body{
+    margin-top: 6rem;
+}
+
+p, h4{
+    font-family: 'Fredoka One', cursive;
+    color: var(--dark-blue);
+}
+::-webkit-scrollbar-track {
+    background-color: var(--dark-blue);
+  }
+  ::-webkit-scrollbar {
+    width: 0.8rem;
+    background: var(--dark-blue);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg,var(--dark-blue),var(--cyan));
+    border-radius: 1rem;
+  }

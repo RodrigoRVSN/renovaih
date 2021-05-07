@@ -1,0 +1,77 @@
+
+.footer-1{
+    width: 100%;
+    background-color: #000000;
+    margin-left: 0%;
+}
+
+.textoRodape:hover{
+    color: var(--cyan);
+    transition: ease-in 0.1s;
+    transform: scale(1.1);
+}
+
+.textoRodape{
+    color: #FFF;
+    text-decoration: none;
+    font-family: 'Modak', cursive;   
+    font-size: 50px;
+    text-shadow: 4px 2px 2px #2117a7;
+    margin-left: 20%;
+}
+
+.textoRodape-2{
+    font-family: 'Fredoka One', cursive;
+    color: #8d8d8d;
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: 35%;
+    margin-top: -20px;
+    font-weight: lighter; 
+}
+
+.icone{
+    width: 50px;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.icone:hover{
+    transition: ease-in 0.1s;
+    transform: scale(1.2);
+}
+
+.carousel-caption{
+    margin-bottom: 20%;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 0px 0px 15px #2117a7;
+    width: 500px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.text-font{
+    font-family: 'Modak', cursive;   
+    font-size: 100px;
+    text-shadow: 4px 2px 2px #2117a7;
+}
+
+.text-font-p{
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #2117a7;
+    margin-top: -8%;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.card-body{
+    font-family: 'Roboto Mono', monospace;  
+    font-size: 20px;
+    color: #000000;
+}

@@ -1,0 +1,24 @@
+@media screen and (max-width:835px){  
+
+    .footer-1{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .textoRodape-2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 62.5%;
+    }
+    
+    .icone{
+        width: 100%;
+        padding: 5px;
+        margin-top: 0px;
+    }
+
+    .collapse{
+        background: linear-gradient(to right,var(--dark-blue),var(--blue));
+    }
+}

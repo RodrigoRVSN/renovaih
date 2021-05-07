@@ -1,0 +1,32 @@
+.navbar-dark .navbar-brand{
+    color: #FFF;
+    text-decoration: none;
+    font-family: 'Modak', cursive;   
+    font-size: 50px;
+    text-shadow: 4px 2px 2px #2117a7;
+    color:var(--pink);
+    margin-left: 3rem;
+    font-size: 2.3rem;
+}
+.navbar-dark .navbar-brand:hover{
+    color: var(--cyan);
+    transition: ease-in 0.1s;
+    transform: scale(1.1);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFF;
+    font-family: 'Fredoka One', cursive;
+    margin-left: 2rem;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    transition: ease all 0.2s;
+    border-top: 4px solid var(--pink);
+    color: var(--cyan);
+}
+
+.navbar-dark .navbar-nav .nav-item .active {
+    color: var(--cyan);
+    border-bottom: 4px solid var(--pink);
+    font-weight: 750;
+}
