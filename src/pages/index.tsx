@@ -1,41 +1,14 @@
-import { GetServerSideProps } from 'next';
 import Head from 'next/head';
+import { Button } from '@App/components/elements/Button';
 
-import api from '../services/api';
-
-interface IRequest {
-  name: string;
-}
-
-interface IHomeProps {
-  data: IRequest;
-}
-
-export default function Home({ data }: IHomeProps): JSX.Element {
+export default function Home(): JSX.Element {
   return (
     <>
       <Head>
         <title>Home</title>
       </Head>
-      <h1>
-        Hello! Template made by
-        <a
-          target="_blank"
-          href="https://github.com/RodrigoRVSN"
-          rel="noreferrer"
-        >
-          {' '}
-          {data && data.name}
-        </a>
-      </h1>
+      <h1 className="text-blue-600">dsadsadsds</h1>
+      <Button />
     </>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await api.get('/hello');
-
-  return {
-    props: { data: response.data },
-  };
-};

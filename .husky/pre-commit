@@ -19,12 +19,5 @@ yarn lint-staged ||
         false; 
 )
 
-yarn cy:run ||
-(
-        echo '😤👀😤👀 Man what are you doing 😤👀😤👀 
-                Cypress Failed. Make the required changes listed above, add changes and try to commit again.'
-        false; 
-)
-
 # If everything passes... Now we can commit
 echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'

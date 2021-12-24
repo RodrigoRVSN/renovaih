@@ -1,12 +1,14 @@
 import Home from '@App/pages';
 import { render } from '@testing-library/react';
 
-const data = {
-  name: 'Rodrigo Victor',
-};
+jest.mock('next-auth/react', () => {
+  return {
+    useSession: () => [null, false],
+  };
+});
 
 describe('Home page', () => {
   it('should renders correctly', () => {
-    render(<Home data={data} />);
+    render(<Home />);
   });
 });
