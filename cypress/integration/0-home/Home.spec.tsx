@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
 
-export {};
+export {}
 
 describe('<Home />', () => {
   context('Visit home', () => {
     it('Should visit home page', () => {
-      cy.visit('/');
-    });
-  });
-});
+      cy.visit('/')
+    })
+  })
+})

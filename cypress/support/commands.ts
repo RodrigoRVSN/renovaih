@@ -1,4 +1,4 @@
-export {};
+export {}
 
 // ***********************************************
 // This example commands.js shows you how to

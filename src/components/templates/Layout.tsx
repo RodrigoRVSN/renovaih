@@ -1,0 +1,15 @@
+import { ReactNode } from 'react'
+import { Header } from '../layout/Header'
+
+interface ILayout {
+  children: ReactNode
+}
+
+export default function Layout({ children }: ILayout): JSX.Element {
+  return (
+    <>
+      <Header />
+      <div className='max-w-5xl mx-auto px-4 md:px-6 lg:px-8'>{children}</div>
+    </>
+  )
+}
