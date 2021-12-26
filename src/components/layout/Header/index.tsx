@@ -16,12 +16,12 @@ export function Header(): JSX.Element {
           } md:flex gap-5`}
         >
           <NavItem href='/' title='Início' />
-          <NavItem href='/projetos' title='Projetos' />
+          <NavItem href='/projects' title='Projetos' />
         </div>
 
         <button
           type='button'
-          className='block absolute right-1 md:hidden p-3 space-y-2 bg-primary-200 rounded shadow cursor-pointer'
+          className='absolute bg-primary-200 block md:hidden p-3 right-1 space-y-2  rounded shadow cursor-pointer'
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className='block w-6 h-0.5 bg-primary-100 animate-pulse' />
