@@ -6,7 +6,7 @@ export function ButtonSignIn(): JSX.Element {
 
   return (
     <button
-      className='bg-primary-200 font-semibold items-center justify-center gap-6 hover:brightness-110 rounded-lg px-6 py-3 w-56 min-w-fit hidden md:flex'
+      className='bg-primary-200 font-semibold items-center justify-center gap-xs hover:brightness-110 rounded-lg px-xs py-xxs w-xxlg min-w-fit hidden md:flex'
       type='button'
       onClick={session ? () => signOut() : () => signIn()}
     >

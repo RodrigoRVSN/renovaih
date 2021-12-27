@@ -6,14 +6,14 @@ export function Header(): JSX.Element {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className='bg-primary-300 py-8 px-4 md:px-6 lg:px-8'>
+    <header className='bg-primary-300 py-xs px-xxs lg:px-xs'>
       <nav className='max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center relative'>
         <span className='text-3xl text-secondary font-bold'>Renovaih</span>
 
         <div
           className={`flex ${
-            menuOpen ? 'flex-col my-4' : 'hidden'
-          } md:flex gap-5`}
+            menuOpen ? 'flex-col my-xxs' : 'hidden'
+          } md:flex gap-xs`}
         >
           <NavItem href='/' title='Início' />
           <NavItem href='/projects' title='Projetos' />
@@ -21,12 +21,12 @@ export function Header(): JSX.Element {
 
         <button
           type='button'
-          className='absolute bg-primary-200 block md:hidden p-3 right-1 space-y-2  rounded shadow cursor-pointer'
+          className='absolute bg-primary-200 block md:hidden p-xs right-xxs space-y-xxs  rounded shadow cursor-pointer'
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span className='block w-6 h-0.5 bg-primary-100 animate-pulse' />
-          <span className='block w-6 h-0.5 bg-primary-100 animate-pulse' />
-          <span className='block w-6 h-0.5 bg-primary-100 animate-pulse' />
+          <span className='block w-xmd h-xxs bg-primary-100 animate-pulse' />
+          <span className='block w-xmd h-xxs bg-primary-100 animate-pulse' />
+          <span className='block w-xmd h-xxs bg-primary-100 animate-pulse' />
         </button>
 
         <ButtonSignIn />
