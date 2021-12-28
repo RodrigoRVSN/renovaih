@@ -8,11 +8,9 @@ export default async function handle(
   res: NextApiResponse
 ): Promise<void> {
   try {
-    console.log('🔥')
     const response = await prisma.ranking.findMany()
-    console.log(response)
     res.status(200).json(response)
   } catch (err) {
-    console.log(err)
+    res.status(400).json({ message: 'Erro ao consultar ranking de usuários' })
   }
 }

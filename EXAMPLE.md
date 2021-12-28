@@ -39,12 +39,14 @@ ___
 
 To use, follow the steps:
 
-```js
+```bash
 - git clone https://github.com/rodrigorvsn/next_ts_template.git
 - yarn || npm install
 - Create your database (schema.sql)
 - Optional -> You can use docker-compose up
 - yarn dev in /server and /app
+
+- yarn prisma db seed
 ```
 
 ## 📫 Contribuiting with next_ts_template
