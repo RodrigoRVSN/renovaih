@@ -24,7 +24,13 @@ ___
 - `yarn lint` to run linters
 - `yarn cy:run` to run cypress in terminal
 - `yarn cy:open` to run cypress in browser
+- `yarn prisma studio` to open database studio
+- `yarn prisma seed` to seed the ranking table
 
+
+GET (ranking DESC) -> /api/users
+PUT (edit user info) -> /api/users/edit/${id}
+GET (user info) -> /api/users/${id}
 ___
 ## 🤖 Auto-formatting on save:
 
