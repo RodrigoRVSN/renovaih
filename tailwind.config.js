@@ -15,14 +15,14 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       background: '#F5F8FA',
+      blocked: '#AFAFAF',
+      button: '#F18F01',
+      card: '#7EBDC2',
+      primary: '#0075FF',
+      secondary: '#b5179e',
+      start_button: '#7EC289',
       text: '#000000',
-      text_contrast: '#edf2f4',
-      primary: {
-        100: '#4cc9f0',
-        200: '#4895ef',
-        300: '#4361ee'
-      },
-      secondary: '#b5179e'
+      text_contrast: '#FFFFFF'
     }
   },
   variants: {
