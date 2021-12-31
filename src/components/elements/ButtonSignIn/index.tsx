@@ -1,17 +1,17 @@
-import { signIn, signOut, useSession } from 'next-auth/react'
-import { FcGoogle } from 'react-icons/fc'
+import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/dist/client/router'
 
 export function ButtonSignIn(): JSX.Element {
   const { data: session } = useSession()
+  const router = useRouter()
 
   return (
     <button
-      className='bg-primary-200 font-semibold items-center justify-center gap-xs hover:brightness-110 rounded-lg px-xs py-xxs w-xxlg min-w-fit hidden md:flex'
+      className='text-text_contrast hover:text-secondary font-bold text-xl'
       type='button'
-      onClick={session ? () => signOut() : () => signIn()}
+      onClick={session ? () => router.push('/profile') : () => signIn()}
     >
-      <FcGoogle size={20} />
-      {session?.user ? session.user.name : 'Entrar com Google'}
+      {session?.user ? 'Perfil' : 'Login'}
     </button>
   )
 }
