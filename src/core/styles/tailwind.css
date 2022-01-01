@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar {
+  @apply bg-background w-xs;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-xl;
+}

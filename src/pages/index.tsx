@@ -1,11 +1,12 @@
-import Head from 'next/head'
+import SEO from '@App/components/elements/SEO'
 
 export default function Home(): JSX.Element {
   return (
     <>
-      <Head>
-        <title>Início</title>
-      </Head>
+      <SEO
+        title='Início | Renovaíh'
+        description='No Renovaih você aprender sobre ambientes se divertindo'
+      />
       <h1>oi</h1>
     </>
   )

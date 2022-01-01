@@ -41,6 +41,7 @@
       }
     ],
     "camelcase": "off",
+    "no-param-reassign": "off",
     "import/no-duplicates": "off",
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
