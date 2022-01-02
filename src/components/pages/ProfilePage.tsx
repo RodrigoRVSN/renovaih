@@ -1,4 +1,5 @@
 import { IUserInfo } from '@App/core/types/next-auth'
+import { Ranking } from '../widgets/Ranking'
 
 type IProfilePage = { user: IUserInfo }
 
@@ -7,6 +8,7 @@ export default function ProfilePage({ user }: IProfilePage): JSX.Element {
     <>
       <h1>{user.name}</h1>
       <h1>{user.email}</h1>
+      <Ranking />
     </>
   )
 }

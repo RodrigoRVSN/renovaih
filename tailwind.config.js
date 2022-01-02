@@ -20,6 +20,7 @@ module.exports = {
       button: '#F18F01',
       card: '#7EBDC2',
       primary: '#0075FF',
+      ranking: '#B2EDFF',
       secondary: '#b5179e',
       start_button: '#7EC289',
       text: '#000000',

@@ -23,9 +23,9 @@ export default function Profile({ data }: IProfile): JSX.Element {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const user = await getSession(ctx)
+  const data = await getSession(ctx)
 
   return {
-    props: { user }
+    props: { data }
   }
 }

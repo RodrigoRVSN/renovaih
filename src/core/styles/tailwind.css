@@ -13,3 +13,11 @@ body {
 ::-webkit-scrollbar-thumb {
   @apply bg-primary rounded-xl;
 }
+
+.transite{
+  @apply transition-all ease-in-out delay-150
+}
+
+.flex-col-row {
+  @apply flex flex-col sm:flex-row
+}
