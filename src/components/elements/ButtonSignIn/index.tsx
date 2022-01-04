@@ -1,4 +1,4 @@
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
 export function ButtonSignIn(): JSX.Element {
@@ -10,17 +10,11 @@ export function ButtonSignIn(): JSX.Element {
       <button
         className='text-text_contrast hover:text-secondary font-bold text-xl'
         type='button'
-        onClick={session ? () => router.push('/profile') : () => signIn()}
+        onClick={
+          session ? () => router.push('/profile') : () => signIn('google')
+        }
       >
         {session?.user ? 'Perfil' : 'Login'}
-      </button>
-
-      <button
-        className='text-text_contrast hover:text-secondary font-bold text-xl'
-        type='button'
-        onClick={() => signOut()}
-      >
-        sair
       </button>
     </>
   )

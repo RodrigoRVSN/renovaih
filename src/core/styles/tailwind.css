@@ -15,7 +15,7 @@ body {
 }
 
 .transite{
-  @apply transition-all ease-in-out delay-150
+  @apply transition-all ease-in-out delay-75
 }
 
 .flex-col-row {
