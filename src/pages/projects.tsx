@@ -1,13 +1,13 @@
 import SEO from '@App/components/elements/SEO'
 
-export default function Home(): JSX.Element {
+export default function Projects(): JSX.Element {
   return (
     <>
       <SEO
-        title='Início | Renovaíh'
+        title='Projetos | Renovaíh'
         description='No Renovaih você aprender sobre ambientes se divertindo'
       />
-      <h1>Tela inicial</h1>
+      <h1>Projetos</h1>
     </>
   )
 }
