@@ -13,7 +13,7 @@ export function Ranking(): JSX.Element {
   }
 
   return (
-    <section className='flex flex-col mt-xlg gap-xmd'>
+    <section className='flex flex-col gap-xmd'>
       {data?.map((user, index) => (
         <CardRankingUser key={user.id} index={index + 1} user={user} />
       ))}

@@ -1,4 +1,5 @@
 import SEO from '@App/components/elements/SEO'
+import HomePage from '@App/components/pages/HomePage'
 
 export default function Home(): JSX.Element {
   return (
@@ -7,7 +8,8 @@ export default function Home(): JSX.Element {
         title='Início | Renovaíh'
         description='No Renovaih você aprender sobre ambientes se divertindo'
       />
-      <h1>Tela inicial</h1>
+
+      <HomePage />
     </>
   )
 }

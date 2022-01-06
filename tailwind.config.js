@@ -10,7 +10,10 @@ module.exports = {
       lg: '32px',
       xlg: '40px',
       xxlg: '64px',
-      xxxlg: '96px'
+      xxxlg: '96px',
+      card_image: '250px',
+      card_h: '450px',
+      card_w: '300px'
     },
     colors: {
       transparent: 'transparent',
