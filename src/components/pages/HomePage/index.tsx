@@ -1,6 +1,11 @@
-import { CardsContainer } from '@App/components/widgets/Home/CardsContainer'
+import { CardPost } from '@App/components/widgets/Home/CardsContainer'
+import { Post } from '@App/core/types/IPosts'
 
-export default function HomePage(): JSX.Element {
+interface IHomePage {
+  posts: Post[]
+}
+
+export default function HomePage({ posts }: IHomePage): JSX.Element {
   return (
     <>
       <video autoPlay loop muted>
@@ -8,7 +13,11 @@ export default function HomePage(): JSX.Element {
         <track src='/video/kids_playing.mp4' kind='captions' />
       </video>
 
-      <CardsContainer />
+      <section className='grid-cards my-xxxlg'>
+        {posts?.map((post) => (
+          <CardPost post={post} />
+        ))}
+      </section>
     </>
   )
 }

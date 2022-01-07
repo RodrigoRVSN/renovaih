@@ -7,8 +7,18 @@ jest.mock('next-auth/react', () => {
   }
 })
 
+const posts = [
+  {
+    slug: '1',
+    title: 'solar',
+    summary: 'resumo elaborado',
+    image: 'foto_do_zoro.png',
+    content: 'conteúdo'
+  }
+]
+
 describe('Home page', () => {
   it('should renders correctly', () => {
-    render(<Home />)
+    render(<Home posts={posts} />)
   })
 })
