@@ -15,7 +15,7 @@ export default function HomePage({ posts }: IHomePage): JSX.Element {
 
       <section className='grid-cards my-xxxlg'>
         {posts?.map((post) => (
-          <CardPost post={post} />
+          <CardPost key={post.slug} post={post} />
         ))}
       </section>
     </>
