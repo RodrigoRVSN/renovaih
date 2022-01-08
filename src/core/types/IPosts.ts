@@ -6,6 +6,10 @@ export interface Post {
   content: string
 }
 
+export interface PostPageProps {
+  post: Omit<Post, 'summary' | 'image'>
+}
+
 export interface PostProps {
   posts: Post[]
 }
@@ -22,5 +26,8 @@ export interface IPrismic {
     post_image: {
       url: string
     }
+    content: {
+      post_content: string
+    }[]
   }
 }

@@ -1,4 +1,4 @@
-import { CardPost } from '@App/components/widgets/Home/CardsContainer'
+import { CardPost } from '@App/components/elements/CardPost'
 import { Post } from '@App/core/types/IPosts'
 
 interface IHomePage {
