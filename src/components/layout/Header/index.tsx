@@ -12,7 +12,7 @@ export function Header(): JSX.Element {
       <nav
         className={`flex ${
           menuOpen ? 'flex-col my-xxs' : 'hidden'
-        } md:flex gap-xs items-center`}
+        } md:flex gap-md items-center`}
       >
         <NavItem href='/' title='Início' />
         <NavItem href='/projects' title='Projetos' />

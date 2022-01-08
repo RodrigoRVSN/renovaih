@@ -13,7 +13,8 @@ module.exports = {
       xxxlg: '96px',
       card_image: '250px',
       card_h: '450px',
-      card_w: '300px'
+      card_w: '300px',
+      card_min_w: '250px'
     },
     colors: {
       transparent: 'transparent',
@@ -26,7 +27,7 @@ module.exports = {
       ranking: '#B2EDFF',
       secondary: '#b5179e',
       start_button: '#7EC289',
-      text: '#000000',
+      text: '#000300',
       text_contrast: '#FFFFFF'
     }
   },

@@ -14,7 +14,7 @@ body {
   @apply bg-primary rounded-xl;
 }
 
-.transite{
+.transite {
   @apply transition-all ease-in-out delay-75
 }
 
@@ -23,5 +23,5 @@ body {
 }
 
 .grid-cards {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xlg
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xxlg
 }
