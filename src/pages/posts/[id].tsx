@@ -21,7 +21,7 @@ export default function Post({ post }: PostPageProps): JSX.Element {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: ['/posts/1', '/posts/2', '/posts/3'],
+    paths: ['/posts/1', '/posts/2'],
     fallback: 'blocking'
   }
 }
