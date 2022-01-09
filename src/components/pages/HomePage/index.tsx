@@ -8,7 +8,7 @@ interface IHomePage {
 export default function HomePage({ posts }: IHomePage): JSX.Element {
   return (
     <>
-      <video autoPlay loop muted>
+      <video autoPlay loop>
         <source src='/video/kids_playing.mp4' />
         <track src='/video/kids_playing.mp4' kind='captions' />
       </video>

@@ -1,5 +1,5 @@
 import Home from '@App/pages'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 jest.mock('next-auth/react', () => {
   return {
@@ -10,15 +10,23 @@ jest.mock('next-auth/react', () => {
 const posts = [
   {
     slug: '1',
-    title: 'solar',
-    summary: 'resumo elaborado',
+    title: 'Energia Solar',
+    summary: 'Resumo elaborado sobre o post',
     image: 'foto_do_zoro.png',
-    content: 'conteúdo'
+    content: 'Conteúdo do site bem completo e conteudista'
   }
 ]
 
 describe('Home page', () => {
   it('should renders correctly', () => {
     render(<Home posts={posts} />)
+
+    expect(screen.getByText(/energia solar/i)).toBeInTheDocument()
+    expect(
+      screen.getByText(/Resumo elaborado sobre o post/i)
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: /bora trabalhar/i })
+    ).toBeInTheDocument()
   })
 })
