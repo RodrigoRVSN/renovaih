@@ -14,7 +14,7 @@ export function ButtonSignIn(): JSX.Element {
           session ? () => router.push('/profile') : () => signIn('google')
         }
       >
-        {session?.user ? 'Perfil' : 'Login'}
+        {session?.user ? 'Perfil' : 'Entrar'}
       </button>
     </>
   )

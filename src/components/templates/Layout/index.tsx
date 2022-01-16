@@ -10,7 +10,7 @@ export default function Layout({ children }: ILayout): JSX.Element {
   return (
     <>
       <Header />
-      <main className='max-w-5xl mx-auto px-4 md:px-6 lg:px-8 min-h-screen'>
+      <main className='max-w-7xl mx-auto px-xxs md:px-xs lg:px-md min-h-screen'>
         {children}
       </main>
       <Footer />

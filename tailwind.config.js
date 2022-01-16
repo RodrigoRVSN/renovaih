@@ -11,9 +11,12 @@ module.exports = {
       xlg: '40px',
       xxlg: '64px',
       xxxlg: '96px',
+      project_image: '150px',
       card_image: '250px',
       card_h: '450px',
       card_w: '300px',
+      project_w: '550px',
+      ranking_w: '550px',
       card_min_w: '250px'
     },
     colors: {
