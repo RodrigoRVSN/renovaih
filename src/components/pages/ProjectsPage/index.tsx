@@ -13,9 +13,10 @@ export default function ProjectsPage({
     <section className='my-xxlg grid-projects'>
       {projects.map((project) => (
         <article
+          key={project.id}
           className={`items-center flex flex-col lg:flex-row ${
             project.available ? 'bg-card' : 'bg-blocked'
-          } lg:h-card_w mx-xxs p-xmd rounded-2xl  lg:w-project_w`}
+          } lg:h-card_w mx-auto p-xmd rounded-2xl  lg:w-project_w`}
         >
           <Image
             width={170}

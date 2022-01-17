@@ -62,3 +62,12 @@ model Ranking {
   id   Int    @id @default(autoincrement())
   User User[]
 }
+
+model Project {
+  id String @id @default(cuid())
+  title String
+  summary String
+  level String
+  image String
+  content String
+}
