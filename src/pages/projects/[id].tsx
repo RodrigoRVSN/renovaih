@@ -1,22 +1,28 @@
-/* eslint-disable testing-library/no-await-sync-query */
 import SEO from '@App/components/elements/SEO'
+import ProjectStepsPage from '@App/components/pages/ProjectStepsPage'
 import { getPrismicClient } from '@App/core/services/prismic'
-import { PostPageProps } from '@App/core/types/IPosts'
-import { IPrismicProject } from '@App/core/types/IProjects'
+import {
+  IPrismicProject,
+  IProjectStepsPageProps
+} from '@App/core/types/IProjects'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
+import { useRouter } from 'next/router'
 import { RichText } from 'prismic-dom'
 
-export default function Project({ project }: any): JSX.Element {
-  // ! Render the project page
-
-  console.log(project)
+export default function Project({
+  content
+}: IProjectStepsPageProps): JSX.Element {
+  const router = useRouter()
+  const { project_title } = router.query
 
   return (
     <>
       <SEO
-        title={`${project.title} | Renovaih`}
-        description={`Veja sobre o conteúdo de ${project.title} em nosso site!`}
+        title={`${project_title} | Renovaih`}
+        description={`Veja sobre o conteúdo de ${project_title} em nosso site!`}
       />
+
+      <ProjectStepsPage project={String(project_title)} content={content} />
     </>
   )
 }
@@ -37,13 +43,16 @@ export const getStaticProps: GetStaticProps = async ({
     String(params?.id)
   )) as unknown as IPrismicProject
 
-  const project = {
-    content: RichText.asHtml(data.steps[0].step)
-  }
+  const content = data.steps.map((step, index) => {
+    return {
+      id: index,
+      step: RichText.asHtml(step.step)
+    }
+  })
 
   return {
     props: {
-      project
+      content
     }
   }
 }

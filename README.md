@@ -25,7 +25,7 @@ ___
 - `yarn cy:run` to run cypress in terminal
 - `yarn cy:open` to run cypress in browser
 - `yarn prisma studio` to open database studio
-- `yarn prisma seed` to seed the ranking table
+- `yarn prisma db seed` to seed the ranking table
 
 
 GET (ranking DESC) -> /api/users

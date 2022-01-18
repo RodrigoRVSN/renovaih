@@ -27,7 +27,7 @@ export function CardProject({ project }: ICardProject): JSX.Element {
           <span>
             <b>Nível {project.level}</b>
           </span>
-          <ButtonProject available project_slug={project.project_slug} />
+          <ButtonProject available project={project} />
         </div>
       </div>
     </article>

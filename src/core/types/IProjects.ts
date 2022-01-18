@@ -19,3 +19,11 @@ export interface IPrismicProject {
     }[]
   }
 }
+
+export interface IProjectStepsPageProps {
+  project: string
+  content: {
+    id: string
+    step: string
+  }[]
+}

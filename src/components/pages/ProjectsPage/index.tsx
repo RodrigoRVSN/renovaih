@@ -9,7 +9,7 @@ export default function ProjectsPage(): JSX.Element {
   })
 
   if (isLoading || !data) {
-    return <LoaderSpinner loading={isLoading} />
+    return <LoaderSpinner loading={isLoading} className='mt-xxxlg' />
   }
 
   return (

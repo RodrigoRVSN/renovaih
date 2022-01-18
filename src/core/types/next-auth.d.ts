@@ -1,6 +1,5 @@
 import type { DefaultUser } from 'next-auth'
-/* 
-user ?: DefaultUser & { */
+
 export interface IUserInfo extends DefaultUser {
   id: string
   points: number

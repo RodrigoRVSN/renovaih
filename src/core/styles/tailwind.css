@@ -29,3 +29,7 @@ body {
 .grid-projects {
   @apply grid grid-cols-1 xl:grid-cols-2 gap-xxlg 
 }
+
+.change-step-button {
+  @apply bg-primary h-xlg w-xlg md:w-xxlg md:h-xxlg rounded-full transite hover:opacity-50 mx-xlg disabled:bg-blocked
+}

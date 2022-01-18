@@ -1,10 +1,14 @@
 interface ILoaderSpinner {
   loading: boolean
+  className?: string
 }
 
-export function LoaderSpinner({ loading }: ILoaderSpinner): JSX.Element {
+export function LoaderSpinner({
+  loading,
+  className
+}: ILoaderSpinner): JSX.Element {
   return loading ? (
-    <div className='flex items-center justify-center '>
+    <div className={`flex items-center justify-center ${className}`}>
       <div className='w-xlg h-xlg border-t-4 border-b-8 border-card rounded-full animate-spin' />
     </div>
   ) : (

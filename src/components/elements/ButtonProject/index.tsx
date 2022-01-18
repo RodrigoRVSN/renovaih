@@ -1,20 +1,24 @@
 import { useRouter } from 'next/router'
 
 import Image from 'next/image'
+import { IProjects } from '@App/core/types/IProjects'
 
 interface IButtonProjectProps {
   available: boolean
-  project_slug: string
+  project: IProjects
 }
 
 export function ButtonProject({
   available,
-  project_slug
+  project
 }: IButtonProjectProps): JSX.Element {
   const router = useRouter()
 
   function handleStartProject(): void {
-    router.push(`/projects/${project_slug}`)
+    router.push({
+      pathname: `/projects/${project.project_slug}`,
+      query: { project_title: project.title }
+    })
   }
 
   return available ? (

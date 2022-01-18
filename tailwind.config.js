@@ -1,6 +1,6 @@
 module.exports = {
-  purge: ['./src/pages/*', './src/components/**/*.tsx'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/pages/*', './src/components/**/*.tsx'],
+  media: false, // or 'media' or 'class'
   theme: {
     spacing: {
       xxs: '4px',
