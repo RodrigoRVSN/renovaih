@@ -19,7 +19,7 @@ export function CardPost({ post }: ICardPost): JSX.Element {
           onClick={() => router.push(`/posts/${post.slug}`)}
           className='bg-primary text-text_contrast mt-md p-xs text-lg rounded-2xl transite hover:opacity-70'
         >
-          Bora trabalhar
+          Bora trabalhar!
         </button>
       </div>
     </article>

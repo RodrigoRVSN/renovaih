@@ -1,3 +1,10 @@
+[ ] Improve projects
+[ ] Error treatment
+[ ] Improve UI / UX
+[ ] Animations
+[ ] Toggle theme
+[ ] Testing
+
 # 👕 Next.JS Template with Linter
 
 

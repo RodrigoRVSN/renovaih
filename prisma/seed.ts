@@ -1,13 +1,15 @@
+/* eslint-disable vars-on-top */
 import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient()
-
-async function main(): Promise<void> {
-  await prisma.ranking.create({ data: {} })
+declare global {
+  // eslint-disable-next-line no-var
+  var prisma: PrismaClient | undefined
 }
 
-main()
-  .catch(() => {
-    process.exit(1)
+export const prisma =
+  global.prisma ||
+  new PrismaClient({
+    log: ['query']
   })
-  .finally(async () => prisma.$disconnect)
+
+if (process.env.NODE_ENV !== 'production') global.prisma = prisma
