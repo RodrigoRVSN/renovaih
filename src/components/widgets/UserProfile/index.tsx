@@ -17,7 +17,7 @@ export function UserProfile({ user }: IProfilePage): JSX.Element {
   return (
     <section className='flex flex-col gap-xmd justify-center items-center relative max-w-fit mx-auto mb-xlg mt-xxlg'>
       <ButtonPoints
-        points={user.points}
+        points={user.points * 1000}
         className='absolute top-xxs right-xxs z-50'
       />
       <Image

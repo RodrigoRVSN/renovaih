@@ -8,7 +8,7 @@ export default async function handle(
   try {
     const response = await prisma.project.findMany()
     res.status(200).json(response)
-  } catch {
+  } catch (err) {
     res.status(400).json({ message: 'Erro ao pegar os projetos.' })
   }
 }

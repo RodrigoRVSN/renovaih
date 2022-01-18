@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ChangeSteps } from '@App/components/elements/ChangeSteps'
 import { IProjectStepsPageProps } from '@App/core/types/IProjects'
+import { ButtonFinishProject } from '@App/components/elements/ButtonFinishProject'
 
 export default function ProjectStepsPage({
   project,
@@ -21,14 +22,13 @@ export default function ProjectStepsPage({
         />
       </header>
 
-      <section className='flex justify-center items-center mt-project_image'>
+      <section className='flex flex-col items-center justify-center mt-project_image'>
         <div
           dangerouslySetInnerHTML={{ __html: content[actualStep].step }}
           className='flex flex-col gap-lg items-center justify-center'
         />
+        {actualStep === content.length - 1 && <ButtonFinishProject />}
       </section>
-
-      {actualStep === content.length - 1 && <button type='button'>oi</button>}
     </>
   )
 }

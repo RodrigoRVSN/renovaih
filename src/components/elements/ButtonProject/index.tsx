@@ -4,12 +4,12 @@ import Image from 'next/image'
 import { IProjects } from '@App/core/types/IProjects'
 
 interface IButtonProjectProps {
-  available: boolean
+  unavailable: boolean
   project: IProjects
 }
 
 export function ButtonProject({
-  available,
+  unavailable,
   project
 }: IButtonProjectProps): JSX.Element {
   const router = useRouter()
@@ -21,15 +21,7 @@ export function ButtonProject({
     })
   }
 
-  return available ? (
-    <button
-      type='button'
-      className='bg-button h-lg ml-xxs lg:ml-xxlg rounded-lg text-text_contrast transite hover:opacity-70 w-project_image'
-      onClick={handleStartProject}
-    >
-      COMEÇAR
-    </button>
-  ) : (
+  return unavailable ? (
     <Image
       layout='fixed'
       width={20}
@@ -37,5 +29,13 @@ export function ButtonProject({
       src='/icons/lock.svg'
       className='mr-xxlg'
     />
+  ) : (
+    <button
+      type='button'
+      className='bg-button h-lg ml-xxs lg:ml-xxlg rounded-lg text-text_contrast transite hover:opacity-70 w-project_image'
+      onClick={handleStartProject}
+    >
+      COMEÇAR
+    </button>
   )
 }

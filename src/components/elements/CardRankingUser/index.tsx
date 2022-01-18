@@ -25,7 +25,7 @@ export function CardRankingUser({
         />
         <h2>{user.name}</h2>
       </div>
-      <ButtonPoints points={user.points} />
+      <ButtonPoints points={user.points * 1000} />
     </article>
   )
 }

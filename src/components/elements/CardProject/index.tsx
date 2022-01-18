@@ -1,16 +1,29 @@
 import { IProjects } from '@App/core/types/IProjects'
 import Image from 'next/image'
+import { useMemo } from 'react'
 import { ButtonProject } from '../ButtonProject'
 
 interface ICardProject {
   project: IProjects
+  points: string
+  project_index: string
 }
 
-export function CardProject({ project }: ICardProject): JSX.Element {
+export function CardProject({
+  project,
+  project_index,
+  points
+}: ICardProject): JSX.Element {
+  const hasDoneProject = useMemo(() => {
+    return project_index + 1 <= points
+  }, [project_index, points])
+
   return (
     <article
       key={project.id}
-      className='items-center flex flex-col gap-xmd lg:flex-row bg-card lg:h-card_w mx-auto p-xmd rounded-2xl lg:w-project_w'
+      className={`items-center flex flex-col gap-xmd lg:flex-row ${
+        hasDoneProject ? 'bg-blocked' : 'bg-card'
+      } lg:h-card_w mx-auto p-xmd rounded-2xl lg:w-project_w`}
     >
       <Image
         width={170}
@@ -27,7 +40,7 @@ export function CardProject({ project }: ICardProject): JSX.Element {
           <span>
             <b>Nível {project.level}</b>
           </span>
-          <ButtonProject available project={project} />
+          <ButtonProject unavailable={hasDoneProject} project={project} />
         </div>
       </div>
     </article>
