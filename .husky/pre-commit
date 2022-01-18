@@ -19,5 +19,12 @@ yarn lint-staged ||
         false; 
 )
 
+yarn test ||
+(
+        echo '🧪🏀😒😤 Can you test your code pls?? 🧪🏀😒😤 
+                Test Check Failed. Make the required changes listed above, add changes and try to commit again.'
+        false; 
+)
+
 # If everything passes... Now we can commit
 echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'

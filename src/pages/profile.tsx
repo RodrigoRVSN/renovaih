@@ -27,6 +27,7 @@ export default function Profile({ data }: IProfile): JSX.Element {
         title='Início | Renovaíh'
         description='No Renovaih você aprender sobre ambientes se divertindo'
       />
+
       <ProfilePage user={data.user} />
     </>
   )

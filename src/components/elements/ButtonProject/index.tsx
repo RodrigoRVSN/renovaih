@@ -4,13 +4,17 @@ import Image from 'next/image'
 
 interface IButtonProjectProps {
   available: boolean
+  project_slug: string
 }
 
-export function ButtonProject({ available }: IButtonProjectProps): JSX.Element {
+export function ButtonProject({
+  available,
+  project_slug
+}: IButtonProjectProps): JSX.Element {
   const router = useRouter()
 
   function handleStartProject(): void {
-    router.push('/projects/start')
+    router.push(`/projects/${project_slug}`)
   }
 
   return available ? (

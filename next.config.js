@@ -2,7 +2,7 @@ module.exports = {
   reactStrictMode: true,
 
   images: {
-    domains: ['lh3.googleusercontent.com'],
+    domains: ['renovaih-academ-rodrigorvsn.vercel.app'],
     formats: ['image/avif', 'image/webp']
   }
 }
