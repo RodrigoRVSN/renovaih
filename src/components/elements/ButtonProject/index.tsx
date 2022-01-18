@@ -4,13 +4,15 @@ import Image from 'next/image'
 import { IProjects } from '@App/core/types/IProjects'
 
 interface IButtonProjectProps {
-  unavailable: boolean
+  done: boolean
   project: IProjects
+  unavailable: boolean
 }
 
 export function ButtonProject({
-  unavailable,
-  project
+  done,
+  project,
+  unavailable
 }: IButtonProjectProps): JSX.Element {
   const router = useRouter()
 
@@ -21,7 +23,7 @@ export function ButtonProject({
     })
   }
 
-  return unavailable ? (
+  return unavailable || done ? (
     <Image
       layout='fixed'
       width={20}

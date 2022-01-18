@@ -12,9 +12,11 @@ export function ButtonFinishProject(): JSX.Element {
         await api.put(`/users/edit/${data.user?.id}`, {
           points: data.user.points + 1
         })
-        router.replace('/')
       } catch (err) {
         console.log(err)
+      } finally {
+        await router.replace('/')
+        window.location.reload()
       }
     }
   }

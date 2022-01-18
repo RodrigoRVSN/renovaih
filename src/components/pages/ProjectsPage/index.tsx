@@ -5,10 +5,10 @@ import { useSession } from 'next-auth/react'
 import { useQuery } from 'react-query'
 
 export default function ProjectsPage(): JSX.Element {
-  const { data, isLoading } = useQuery(['projects'], fetchAllProjects, {
-    staleTime: 5 * 60 * 1000 // 5 min
-  })
   const user = useSession()
+  const { data, isLoading } = useQuery(['projects'], fetchAllProjects, {
+    staleTime: 24 * 60 * 60 * 1000 // 1 day
+  })
 
   if (isLoading || !data) {
     return <LoaderSpinner loading={isLoading} className='mt-xxxlg' />

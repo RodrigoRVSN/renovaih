@@ -14,16 +14,20 @@ export function CardProject({
   project_index,
   points
 }: ICardProject): JSX.Element {
+  const unavailableProject = useMemo(() => {
+    return project_index > points
+  }, [project_index, points])
+
   const hasDoneProject = useMemo(() => {
-    return project_index + 1 <= points
+    return project_index < points
   }, [project_index, points])
 
   return (
     <article
       key={project.id}
       className={`items-center flex flex-col gap-xmd lg:flex-row ${
-        hasDoneProject ? 'bg-blocked' : 'bg-card'
-      } lg:h-card_w mx-auto p-xmd rounded-2xl lg:w-project_w`}
+        unavailableProject ? 'bg-blocked' : 'bg-card'
+      } mx-auto p-xmd rounded-2xl lg:w-project_w`}
     >
       <Image
         width={170}
@@ -40,7 +44,11 @@ export function CardProject({
           <span>
             <b>Nível {project.level}</b>
           </span>
-          <ButtonProject unavailable={hasDoneProject} project={project} />
+          <ButtonProject
+            unavailable={unavailableProject}
+            done={hasDoneProject}
+            project={project}
+          />
         </div>
       </div>
     </article>

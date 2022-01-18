@@ -1,5 +1,6 @@
 import { ButtonSignIn } from '@App/components/elements/ButtonSignIn'
 import { useState } from 'react'
+import Link from 'next/link'
 import NavItem from './NavItem'
 
 export function Header(): JSX.Element {
@@ -7,11 +8,13 @@ export function Header(): JSX.Element {
 
   return (
     <header className='bg-primary flex flex-col md:flex-row items-center justify-between px-xxxlg py-xmd relative'>
-      <span className='text-3xl text-text_contrast font-bold'>Renovaih</span>
+      <Link href='/'>
+        <a className='text-3xl text-text_contrast font-bold'>Renovaih</a>
+      </Link>
 
       <nav
         className={`flex ${
-          menuOpen ? 'flex-col my-xxs' : 'hidden'
+          menuOpen ? 'flex-col my-xxs mt-lg' : 'hidden'
         } md:flex gap-md items-center`}
       >
         <NavItem href='/' title='Início' />
