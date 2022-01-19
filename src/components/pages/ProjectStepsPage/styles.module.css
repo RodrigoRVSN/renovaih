@@ -1,0 +1,28 @@
+
+.header__container{
+  @apply bg-secondary flex items-center justify-center h-xxxlg w-full  relative rounded-b-2xl;
+}
+
+.header__container__title { 
+  @apply font-bold my-xxlg text-2xl sm:text-3xl md:text-4xl text-transparent bg-gradient-to-r bg-clip-text from-background to-text_contrast p-lg text-center;
+}
+
+.step__container{
+  @apply flex flex-col gap-md justify-center text-lg p-xmd;
+}
+
+.step__container h1 {
+  @apply font-bold text-2xl sm:text-3xl text-transparent bg-gradient-to-r bg-clip-text from-secondary to-button text-center;
+}
+
+.step__container h2 {
+  @apply font-bold text-lg sm:text-xl;
+}
+
+.step__container > div { 
+  @apply mx-auto
+}
+
+.step__container > div > iframe { 
+  @apply w-ranking_w h-card_h rounded-3xl
+}

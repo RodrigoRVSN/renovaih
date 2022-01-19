@@ -23,7 +23,7 @@ export function ButtonFinishProject(): JSX.Element {
 
   return (
     <button
-      className='self-center mt-xxlg bg-primary py-md px-lg rounded-full transite hover:opacity-40'
+      className='self-center mb-xxlg mt-xxlg bg-primary text-text_contrast py-md px-lg rounded-full transite hover:opacity-40'
       onClick={handleFinishProject}
       type='button'
     >

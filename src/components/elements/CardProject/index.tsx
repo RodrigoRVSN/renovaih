@@ -26,7 +26,7 @@ export function CardProject({
     <article
       key={project.id}
       className={`items-center flex flex-col gap-xmd lg:flex-row ${
-        unavailableProject ? 'bg-blocked' : 'bg-card'
+        unavailableProject ? 'bg-blocked' : 'bg-start_button'
       } mx-auto p-xmd rounded-2xl lg:w-project_w`}
     >
       <Image

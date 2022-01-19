@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-background;
+  @apply bg-background font-mono;
 }
 
 ::-webkit-scrollbar {
@@ -31,5 +31,5 @@ body {
 }
 
 .change-step-button {
-  @apply bg-primary h-xlg w-xlg md:w-xxlg md:h-xxlg rounded-full transite hover:opacity-50 mx-xlg disabled:bg-blocked
+  @apply bg-primary h-xlg w-xlg md:w-xxlg md:h-xxlg rounded-full transite hover:opacity-50 mx-xxs md:mx-xlg disabled:bg-blocked
 }

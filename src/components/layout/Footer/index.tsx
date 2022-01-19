@@ -29,7 +29,8 @@ export function Footer(): JSX.Element {
       </section>
 
       <span className='mx-auto text-center'>
-        ©Copyright Rodrigo 2021 - github@rodrigorvsn
+        ©Copyright Rodrigo 2022 -{' '}
+        <a href='https://github.com/rodrigorvsn'>github@rodrigorvsn</a>
       </span>
     </footer>
   )
