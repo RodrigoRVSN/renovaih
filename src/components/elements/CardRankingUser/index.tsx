@@ -11,7 +11,7 @@ export function CardRankingUser({
   user
 }: ICardRankingUser): JSX.Element {
   return (
-    <article className='bg-ranking flex-col-row gap-md justify-between mx-xxs sm:mx-lg p-md rounded-md transite hover:scale-105'>
+    <article className='bg-ranking flex-col-row gap-md justify-between mx-xxs sm:mx-lg p-md rounded-md transite hover:scale-105 text-text'>
       <div className='flex gap-md items-center'>
         <span>
           <b>{index}.</b>

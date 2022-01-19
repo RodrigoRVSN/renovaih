@@ -13,7 +13,7 @@ export function ButtonPoints({
       type='button'
     >
       <b className='text-primary'>R </b>
-      <b>{points}</b>
+      <b className='text-text'>{points}</b>
     </button>
   )
 }

@@ -1,6 +1,7 @@
 import { ButtonSignIn } from '@App/components/elements/ButtonSignIn'
 import { useState } from 'react'
 import Link from 'next/link'
+import { ButtonToggleTheme } from '@App/components/elements/ButtonToggleTheme'
 import NavItem from './NavItem'
 
 export function Header(): JSX.Element {
@@ -17,6 +18,7 @@ export function Header(): JSX.Element {
           menuOpen ? 'flex-col my-xxs mt-lg' : 'hidden'
         } md:flex gap-md items-center`}
       >
+        <ButtonToggleTheme />
         <NavItem href='/' title='Início' />
         <NavItem href='/projects' title='Projetos' />
 

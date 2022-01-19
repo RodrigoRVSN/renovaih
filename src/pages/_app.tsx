@@ -4,6 +4,7 @@ import '@App/core/styles/tailwind.css'
 import Layout from '@App/components/templates/Layout'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import { ThemeProvider, useTheme } from 'next-themes'
 
 const queryClient = new QueryClient()
 
@@ -14,9 +15,11 @@ function MyApp({
   return (
     <QueryClientProvider client={queryClient}>
       <SessionProvider session={session}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider attribute='class'>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </SessionProvider>
       <ReactQueryDevtools />
     </QueryClientProvider>

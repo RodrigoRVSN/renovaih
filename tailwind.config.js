@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ['./src/pages/*', './src/components/**/*.tsx'],
-  media: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -41,7 +41,8 @@ module.exports = {
       secondary: '#b5179e',
       start_button: '#2a9d8f',
       text: '#000300',
-      text_contrast: '#FFFFFF'
+      text_contrast: '#FFFFFF',
+      dark_contrast: '#2b2d42'
     }
   },
   variants: {

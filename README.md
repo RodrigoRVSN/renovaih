@@ -1,6 +1,6 @@
 - [x] Improve projects
 - [x] Improve UI / UX
-- [ ] Error treatment
+- [x] Error treatment
 - [ ] Animations
 - [ ] Toggle theme
 - [ ] Testing
