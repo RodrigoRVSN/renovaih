@@ -1,4 +1,5 @@
 import { Post } from '@App/core/types/IPosts'
+import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 
 interface ICardPost {
@@ -9,7 +10,12 @@ export function CardPost({ post }: ICardPost): JSX.Element {
   const router = useRouter()
 
   return (
-    <article className='bg-text_contrast dark:bg-dark_contrast flex flex-col items-center mx-auto mb-xxlg w-card_min_w sm:w-card_w text-center rounded-xl shadow-xl transite hover:scale-110'>
+    <motion.article
+      initial={{ opacity: 0, y: '-20vh' }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className='card-post'
+    >
       <img className='w-card_image rounded-3xl' src={post.image} alt='Logo' />
       <div className='p-lg'>
         <h2 className='font-bold mb-lg text-xl'>{post.title}</h2>
@@ -22,6 +28,6 @@ export function CardPost({ post }: ICardPost): JSX.Element {
           Bora trabalhar!
         </button>
       </div>
-    </article>
+    </motion.article>
   )
 }

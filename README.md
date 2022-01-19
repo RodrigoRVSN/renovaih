@@ -1,8 +1,8 @@
 - [x] Improve projects
 - [x] Improve UI / UX
 - [x] Error treatment
-- [ ] Animations
-- [ ] Toggle theme
+- [x] Animations
+- [x] Toggle theme
 - [ ] Testing
 
 # 👕 Next.JS Template with Linter

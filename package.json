@@ -31,6 +31,7 @@
     "@prisma/client": "^3.7.0",
     "@prismicio/client": "^6.0.0",
     "axios": "^0.24.0",
+    "framer-motion": "^6.0.0",
     "next": "12.0.2",
     "next-auth": "^4.0.6",
     "next-themes": "^0.0.15",

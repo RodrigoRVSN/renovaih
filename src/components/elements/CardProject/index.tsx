@@ -1,4 +1,5 @@
 import { IProjects } from '@App/core/types/IProjects'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useMemo } from 'react'
 import { ButtonProject } from '../ButtonProject'
@@ -23,8 +24,10 @@ export function CardProject({
   }, [project_index, points])
 
   return (
-    <article
-      key={project.id}
+    <motion.article
+      initial={{ opacity: 0, y: '-20vh' }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       className={`items-center flex flex-col gap-xmd lg:flex-row ${
         unavailableProject ? 'bg-blocked' : 'bg-start_button'
       } mx-auto p-xmd rounded-2xl lg:w-project_w`}
@@ -51,6 +54,6 @@ export function CardProject({
           />
         </div>
       </div>
-    </article>
+    </motion.article>
   )
 }

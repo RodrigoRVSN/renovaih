@@ -24,7 +24,7 @@ export default function Profile({ data }: IProfile): JSX.Element {
   return (
     <>
       <SEO
-        title='Início | Renovaíh'
+        title={`${data.user.name} | Renovaíh`}
         description='No Renovaih você aprender sobre ambientes se divertindo'
       />
 

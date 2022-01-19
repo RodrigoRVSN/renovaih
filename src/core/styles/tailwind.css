@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply toggle-bg font-mono;
+  @apply toggle-bg font-mono overflow-x-hidden;
 }
 
 ::-webkit-scrollbar {
@@ -41,4 +41,8 @@ body {
 
 .toggle-text {
   @apply dark:text-text text-text_contrast
+}
+
+.card-post {
+  @apply bg-text_contrast dark:bg-dark_contrast flex flex-col items-center mx-auto mb-xxlg w-card_min_w sm:w-card_w text-center rounded-xl shadow-xl transite hover:scale-110
 }

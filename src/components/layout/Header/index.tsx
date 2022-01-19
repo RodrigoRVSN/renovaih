@@ -1,11 +1,19 @@
-import { ButtonSignIn } from '@App/components/elements/ButtonSignIn'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ButtonToggleTheme } from '@App/components/elements/ButtonToggleTheme'
-import NavItem from './NavItem'
+import { useRouter } from 'next/router'
+import { NavGroup } from './NavGroup'
 
 export function Header(): JSX.Element {
   const [menuOpen, setMenuOpen] = useState(false)
+  const router = useRouter()
+
+  function handleOpenMenu(): void {
+    setMenuOpen((prevState) => !prevState)
+  }
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [router])
 
   return (
     <header className='bg-primary flex flex-col md:flex-row items-center justify-between px-xxxlg py-xmd relative'>
@@ -13,22 +21,12 @@ export function Header(): JSX.Element {
         <a className='text-3xl text-text_contrast font-bold'>Renovaih</a>
       </Link>
 
-      <nav
-        className={`flex ${
-          menuOpen ? 'flex-col my-xxs mt-lg' : 'hidden'
-        } md:flex gap-md items-center`}
-      >
-        <ButtonToggleTheme />
-        <NavItem href='/' title='Início' />
-        <NavItem href='/projects' title='Projetos' />
-
-        <ButtonSignIn />
-      </nav>
+      <NavGroup menuOpen={menuOpen} />
 
       <button
         type='button'
         className='absolute bg-card block md:hidden p-xs right-xxs space-y-xxs  rounded shadow cursor-pointer'
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => handleOpenMenu()}
       >
         <span className='block w-xmd h-xxs bg-primary animate-pulse' />
         <span className='block w-xmd h-xxs bg-primary animate-pulse' />

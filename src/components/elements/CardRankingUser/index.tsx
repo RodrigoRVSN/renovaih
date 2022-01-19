@@ -1,4 +1,5 @@
 import { IUserInfo } from '@App/core/types/next-auth'
+import { motion } from 'framer-motion'
 import { ButtonPoints } from '../ButtonPoints'
 
 interface ICardRankingUser {
@@ -10,8 +11,20 @@ export function CardRankingUser({
   index,
   user
 }: ICardRankingUser): JSX.Element {
+  const variants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 }
+  }
+
   return (
-    <article className='bg-ranking flex-col-row gap-md justify-between mx-xxs sm:mx-lg p-md rounded-md transite hover:scale-105 text-text'>
+    <motion.article
+      className='bg-ranking flex-col-row gap-md justify-between mx-xxs sm:mx-lg p-md rounded-md transite hover:scale-105 text-text'
+      animate='visible'
+      initial='hidden'
+      variants={variants}
+      whileHover={{ scale: 1.1 }}
+      transition={{ type: 'spring', stiffness: 300 }}
+    >
       <div className='flex gap-md items-center'>
         <span>
           <b>{index}.</b>
@@ -26,6 +39,6 @@ export function CardRankingUser({
         <h2>{user.name}</h2>
       </div>
       <ButtonPoints points={user.points * 1000} />
-    </article>
+    </motion.article>
   )
 }

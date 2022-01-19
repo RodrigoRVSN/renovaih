@@ -1,5 +1,6 @@
 import Home from '@App/pages'
 import { render, screen } from '@testing-library/react'
+import '../utils/intersectionObserver'
 
 jest.mock('next-auth/react', () => {
   return {

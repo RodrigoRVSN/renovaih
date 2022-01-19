@@ -6,7 +6,7 @@ export function ButtonToggleTheme(): JSX.Element {
     <button
       aria-label='Toggle Dark Mode'
       type='button'
-      className='bg-dark_contrast p-md rounded-full h-lg flex items-center text-text_contrast'
+      className='bg-dark_contrast p-lg sm:p-md rounded-full h-lg flex items-center text-text_contrast w-scre'
       onClick={() => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
       }}
