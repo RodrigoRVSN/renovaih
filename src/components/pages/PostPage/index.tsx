@@ -7,7 +7,7 @@ export function PostPage({ post }: PostPageProps): JSX.Element {
         {post.title}
       </h1>
       <div
-        className='leading-10 text-lg text-text'
+        className='leading-10 text-lg'
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </section>
