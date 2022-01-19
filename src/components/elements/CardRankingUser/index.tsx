@@ -22,7 +22,7 @@ export function CardRankingUser({
       animate='visible'
       initial='hidden'
       variants={variants}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ backgroundColor: '#0075FF' }}
       transition={{ type: 'spring', stiffness: 300 }}
     >
       <div className='flex gap-md items-center'>
