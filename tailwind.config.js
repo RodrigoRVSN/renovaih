@@ -40,7 +40,7 @@ module.exports = {
       ranking: '#B2EDFF',
       secondary: '#b5179e',
       start_button: '#2a9d8f',
-      text: '#000300',
+      text: '#302c2c',
       text_contrast: '#FFFFFF',
       dark_contrast: '#2b2d42'
     }

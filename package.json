@@ -21,7 +21,7 @@
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "prepare": "husky install",
     "lint": "eslint --fix .",
-    "test": "jest"
+    "test": "jest --env=jsdom"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
@@ -76,7 +76,6 @@
     "prettier": "^2.4.1",
     "prisma": "^3.7.0",
     "tailwindcss": "^3.0.7",
-    "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   }

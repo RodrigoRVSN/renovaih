@@ -4,7 +4,7 @@ import '@App/core/styles/tailwind.css'
 import Layout from '@App/components/templates/Layout'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { ThemeProvider, useTheme } from 'next-themes'
+import { ThemeProvider } from 'next-themes'
 
 const queryClient = new QueryClient()
 

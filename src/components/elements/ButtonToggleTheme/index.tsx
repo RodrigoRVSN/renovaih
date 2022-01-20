@@ -2,6 +2,7 @@ import { useTheme } from 'next-themes'
 
 export function ButtonToggleTheme(): JSX.Element {
   const { theme, setTheme } = useTheme()
+
   return (
     <button
       aria-label='Toggle Dark Mode'

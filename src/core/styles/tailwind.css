@@ -6,6 +6,14 @@ body {
   @apply toggle-bg font-mono overflow-x-hidden;
 }
 
+.toggle-bg {
+  @apply bg-background dark:bg-text
+}
+
+.toggle-text {
+  @apply dark:text-text text-text_contrast
+}
+
 ::-webkit-scrollbar {
   @apply toggle-bg w-xs;
 }
@@ -32,15 +40,6 @@ body {
 
 .change-step-button {
   @apply bg-primary h-xlg w-xlg md:w-xxlg md:h-xxlg rounded-full transite hover:opacity-50 mx-xxs md:mx-xlg disabled:bg-blocked
-}
-
-
-.toggle-bg {
-  @apply bg-background dark:bg-text
-}
-
-.toggle-text {
-  @apply dark:text-text text-text_contrast
 }
 
 .card-post {

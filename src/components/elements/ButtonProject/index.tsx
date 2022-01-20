@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { IProjects } from '@App/core/types/IProjects'
 import { motion } from 'framer-motion'
 
-interface IButtonProjectProps {
+export interface IButtonProjectProps {
   done: boolean
   project: IProjects
   unavailable: boolean
@@ -27,6 +27,7 @@ export function ButtonProject({
   return unavailable || done ? (
     <motion.div whileHover={{ scale: 2 }}>
       <Image
+        data-testid='blocked'
         layout='fixed'
         width={20}
         height={20}

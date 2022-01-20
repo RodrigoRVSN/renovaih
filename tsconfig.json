@@ -45,6 +45,9 @@
       "@App/services/*": [
         "src/services/*"
       ],
+      "@App/tests/*": [
+        "src/tests/*"
+      ],
     }
   },
   "include": [
