@@ -9,14 +9,14 @@ async function fetchAllUsers(): Promise<IUserInfo[]> {
       `${baseURL}/users`
     )) as unknown as IRanking
 
-    return response?.data[0]?.User
+    return response.data[0].User
   } catch (err) {
     throw Error(String(err))
   }
 }
 
 const useFetchRanking = () => {
-  const { data, isError, isLoading, refetch } = useQuery(
+  const { data, isError, isLoading, refetch, isSuccess } = useQuery(
     ['ranking_users'],
     fetchAllUsers,
     {
@@ -24,7 +24,7 @@ const useFetchRanking = () => {
     }
   )
 
-  return { data, isError, isLoading, refetch }
+  return { data, isError, isLoading, refetch, isSuccess }
 }
 
 export { fetchAllUsers, useFetchRanking }
