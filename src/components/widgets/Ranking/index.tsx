@@ -1,17 +1,10 @@
-import { useQuery } from 'react-query'
-import { fetchAllUsers } from '@App/core/services/fetchUsers'
+import { useFetchRanking } from '@App/core/services/fetchUsers'
 import { CardRankingUser } from '@App/components/elements/CardRankingUser'
 import { LoaderSpinner } from '@App/components/elements/LoaderSpinner'
 import { ErrorGeneric } from '@App/components/elements/ErrorGeneric'
 
 export function Ranking(): JSX.Element {
-  const { data, isError, isLoading, refetch } = useQuery(
-    ['ranking_users'],
-    fetchAllUsers,
-    {
-      staleTime: 24 * 60 * 60 * 1000 // 1 day
-    }
-  )
+  const { data, isError, isLoading, refetch } = useFetchRanking()
 
   if (isLoading) {
     return <LoaderSpinner loading={isLoading} />

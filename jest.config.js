@@ -11,7 +11,6 @@ module.exports = {
     '^@App/(.*)$': '<rootDir>/src/$1',
     '^lib/(.*)$': '<rootDir>/common/$1'
   },
-  testEnvironment: 'jsdom',
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.tsx',

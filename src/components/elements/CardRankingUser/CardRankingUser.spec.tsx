@@ -7,7 +7,10 @@ describe('<CardRankingUser />', () => {
     render(<CardRankingUser index={1} user={usersMock[0]} />)
 
     expect(screen.getByAltText(/Foto de Rodrigo Victor/i)).toBeInTheDocument()
-    expect(screen.getByRole('img')).toHaveAttribute('src', 'zoro.png')
+    expect(screen.getByRole('img')).toHaveAttribute(
+      'src',
+      'https://w7.pngwing.com/pngs/942/576/png-transparent-roronoa-zoro-one-piece-vegeta-character-one-piece-face-human-boy.png'
+    )
 
     expect(screen.getByText(/1/i)).toBeInTheDocument()
     expect(screen.getByText(/Rodrigo Victor/i)).toBeInTheDocument()
