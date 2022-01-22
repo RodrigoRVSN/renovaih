@@ -1,52 +1,138 @@
-- [x] Improve projects
-- [x] Improve UI / UX
-- [x] Error treatment
-- [x] Animations
-- [x] Toggle theme
-- [ ] Testing
+# renovaih
 
-# 👕 Next.JS Template with Linter
+<!--- https://shields.io --->
 
-
-<br>
+![GitHub repo size](https://img.shields.io/github/repo-size/rodrigorvsn/renovaih?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/rodrigorvsn/renovaih?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/rodrigorvsn/renovaih?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/rodrigorvsn/renovaih?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/rodrigorvsn/renovaih?style=for-the-badge)
 
 ___
-## 🔨 Tools:
+<!--- #################### mudar badges #################### --->
 
-- NextJS
+
+
+
+
+<!--- #################### mudar imagem exemplo #################### --->
+___
+> This is a educational website to see posts and do projects.
+___
+## 💻 Prerequisites
+
+- Install LTS Node version.
+- Create oauth provider in Google Console
+- Create a database in postgres (can be done with Prisma + Heroku)
+
+<!--- #################### mudar pré-requisitos  ####################--->
+___
+## 🛠 Tools used
+
 - Typescript
-- Axios (Fetching)
-- ESLint (Code Pattern)
-- Prettier (Formatter)
-- Husky (Pre-commit)
-- Jest (Unit/Integration Test)
-- Cypress (Test E2E)
+- <b>Nextjs</b>
+- Prisma ORM
+- Prismic CMS
+- Next-auth
+- Axios
+- React query
+- Postgres
+- Next-themes
+
+<!--- #################### mudar ferramentas #################### --->
+
 ___
-## 🤺 How to use:
 
-- `git clone https://github.com/RodrigoRVSN/next_ts_boilerplate.git`
-- `yarn` to install dependencies
-- `yarn dev` to run the app
-- `yarn test` to run tests
-- `yarn lint` to run linters
-- `yarn cy:run` to run cypress in terminal
-- `yarn cy:open` to run cypress in browser
-- `yarn prisma studio` to open database studio
-- `yarn prisma db seed` to seed the ranking table
+## 🚀 Installing renovaih
+
+### To use, follow the steps:
 
 
+#### Clone repository
+
+```bash
+  git clone https://github.com/RodrigoRVSN/next_ts_boilerplate.git
+```
+
+#### Install dependencies
+
+```bash
+  yarn
+```
+
+#### Seed the database with the ranking
+
+```bash
+  yarn prisma db seed
+```
+
+#### Run app
+
+```bash
+  yarn dev
+```
+
+#### Run unit/integration tests
+
+```bash
+  yarn test
+```
+
+#### Run cypress tests in CLI
+
+```bash
+  yarn cy:run
+```
+
+#### Run cypress tests in browser
+
+```bash
+  yarn cy:open
+```
+
+#### Open prisma studio to access and alter database
+
+```bash
+yarn prisma studio
+```
+
+#### Endpoints of the application
+
+```bash
 GET (ranking DESC) -> /api/users
 PUT (edit user info) -> /api/users/edit/${id}
 GET (user info) -> /api/users/${id}
-___
-## 🤖 Auto-formatting on save:
-
-Inside `/.vscode/settings.json` we set prettier as the default formatter, and also set `editor.codeActionsOnSave` to run:
-
-- **Lint:** `"source.fixAll.eslint"`
-- **Format:** `"source.fixAll.format"`
+GET (lit projects) -> /api/projects
+```
 
 ___
-## ✅ Checking standards pre-commit:
 
-Using [husky](https://www.npmjs.com/package/husky) we can check all of our style standards to make sure our git commits are up to par. Check those checks out at [`.husky/pre-commit`](.husky/pre-commit)
+## 📫 Contribuiting with renovaih
+
+To contribue with renovaih, follow the steps:
+
+1. Fork this repository.
+2. Create a branch: `git checkout -b <name_branch>`.
+3. Make the changes and confirm: `git commit -m '<message_commit>'`
+4. Send to original repository: `git push origin <main_branch> / <local>`
+5. Send the pull request.
+
+Alternatively, see the GitHub documentation at [how to create a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+___
+## 🤝 Contributors
+
+Made with ❤️ by:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://github.com/rodrigorvsn.png" width="100px;" alt="Foto do Rodrigo Victor no GitHub"/><br>
+        <sub>
+          <b>Rodrigo Victor</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
