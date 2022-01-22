@@ -1,3 +1,4 @@
+import { IUsersMockApi } from '@App/core/types/IUsersMockApi'
 import { IUserInfo } from '@App/core/types/next-auth'
 
 const usersMock: IUserInfo[] = [
@@ -21,4 +22,10 @@ const usersMock: IUserInfo[] = [
   }
 ]
 
-export { usersMock }
+const usersMockApi: IUsersMockApi[] = [
+  {
+    User: [...usersMock]
+  }
+]
+
+export { usersMock, usersMockApi }

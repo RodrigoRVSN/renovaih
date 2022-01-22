@@ -22,7 +22,7 @@ ___
 ## 💻 Prerequisites
 
 - Install LTS Node version.
-- Create oauth provider in Google Console
+- Create OAuth provider in Google Console
 - Create a database in postgres (can be done with Prisma + Heroku)
 
 <!--- #################### mudar pré-requisitos  ####################--->
@@ -45,60 +45,57 @@ ___
 
 ## 🚀 Installing renovaih
 
-### To use, follow the steps:
-
-
 #### Clone repository
 
-```bash
-  git clone https://github.com/RodrigoRVSN/next_ts_boilerplate.git
+```powershell
+  git clone https://github.com/RodrigoRVSN/renovaih.git
 ```
 
 #### Install dependencies
 
-```bash
+```powershell
   yarn
 ```
 
 #### Seed the database with the ranking
 
-```bash
+```powershell
   yarn prisma db seed
 ```
 
 #### Run app
 
-```bash
+```powershell
   yarn dev
 ```
 
 #### Run unit/integration tests
 
-```bash
+```powershell
   yarn test
 ```
 
 #### Run cypress tests in CLI
 
-```bash
+```powershell
   yarn cy:run
 ```
 
 #### Run cypress tests in browser
 
-```bash
+```powershell
   yarn cy:open
 ```
 
 #### Open prisma studio to access and alter database
 
-```bash
+```powershell
 yarn prisma studio
 ```
 
 #### Endpoints of the application
 
-```bash
+```powershell
 GET (ranking DESC) -> /api/users
 PUT (edit user info) -> /api/users/edit/${id}
 GET (user info) -> /api/users/${id}

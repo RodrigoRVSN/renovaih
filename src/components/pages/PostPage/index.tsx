@@ -1,11 +1,11 @@
 import { PostPageProps } from '@App/core/types/IPosts'
 
+import styles from './styles.module.css'
+
 export function PostPage({ post }: PostPageProps): JSX.Element {
   return (
-    <section className='p-xs sm:p-lg flex flex-col items-center'>
-      <h1 className='my-xxlg text-4xl sm:text-5xl md:text-6xl text-transparent bg-gradient-to-r bg-clip-text from-primary to-secondary font-bold'>
-        {post.title}
-      </h1>
+    <section className={styles.postpage__container}>
+      <h1 className={styles.postpage__container__title}>{post.title}</h1>
       <div
         className='leading-10 text-lg'
         dangerouslySetInnerHTML={{ __html: post.content }}

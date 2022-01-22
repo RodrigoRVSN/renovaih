@@ -1,9 +1,12 @@
 import { IFetchProjects, IProjects } from '../types/IProjects'
-import api from './api'
+import { apiAxios, baseURL } from './api'
 
 async function fetchAllProjects(): Promise<IProjects[]> {
   try {
-    const response = (await api.get('/projects')) as unknown as IFetchProjects
+    const response = (await apiAxios.get(
+      `${baseURL}/projects`
+    )) as unknown as IFetchProjects
+
     return response.data
   } catch (err) {
     throw Error(String(err))

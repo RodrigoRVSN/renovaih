@@ -1,26 +1,31 @@
-import { apiAxios, baseURL } from '@App/core/services/api'
-import { fetchAllUsers, useFetchRanking } from '@App/core/services/fetchUsers'
+import { useFetchRanking } from '@App/core/services/fetchUsers'
 import { render, screen } from '@testing-library/react'
 import { renderHook } from '@testing-library/react-hooks'
-import axios from 'axios'
 import { ReactNode } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
+
+import AxiosMock from 'axios-mock-adapter'
+
+import { apiAxios, baseURL } from '@App/core/services/api'
 import { Ranking } from '.'
+
+const apiMock = new AxiosMock(apiAxios)
 
 interface IWrapper {
   children: ReactNode
 }
 
-jest.mock('axios', () => ({
-  ...jest.requireActual('axios'),
-  get: jest.fn()
-}))
-
-const axiosMock = apiAxios as jest.Mocked<typeof axios>
 let queryClient: QueryClient
 
 const setup = () => {
-  queryClient = new QueryClient()
+  queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false
+      }
+    }
+  })
+
   const view = render(
     <QueryClientProvider client={queryClient}>
       <Ranking />
@@ -38,6 +43,7 @@ const createWrapper = () => {
 
 describe('<UserProfile />', () => {
   beforeEach(() => {
+    apiMock.reset()
     queryClient = new QueryClient()
     jest.useRealTimers()
   })
@@ -49,23 +55,13 @@ describe('<UserProfile />', () => {
 
   it('Should show error message', async () => {
     setup()
-    const message = 'Network Error'
-    axiosMock.get.mockRejectedValueOnce(Error(message))
-
-    try {
-      await fetchAllUsers()
-    } catch (err) {
-      expect((err as Error).message).toBe('Error: Network Error')
-    }
+    apiMock.onGet(`${baseURL}/users`).networkErrorOnce()
 
     const { result, waitFor } = renderHook(() => useFetchRanking(), {
       wrapper: createWrapper()
     })
 
     await waitFor(() => result.current.isError, { timeout: 10000 })
-
-    expect(axios.get).toHaveBeenCalledWith(`${baseURL}/users`)
-    expect(axios.get).toHaveBeenCalledWith(`${baseURL}/users`)
 
     expect(
       screen.getByText(/Houve um erro ao carregar o ranking, tente novamente!/i)

@@ -1,4 +1,4 @@
-import api from '@App/core/services/api'
+import { apiAxios, baseURL } from '@App/core/services/api'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
@@ -15,7 +15,7 @@ export function ButtonFinishProject(): JSX.Element {
     if (data?.user) {
       try {
         setIsLoading(true)
-        await api.put(`/users/edit/${data.user?.id}`, {
+        await apiAxios.put(`${baseURL}/users/edit/${data.user?.id}`, {
           points: data.user.points + 1
         })
       } catch {

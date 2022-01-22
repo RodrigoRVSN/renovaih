@@ -1,0 +1,15 @@
+.postpage__container{
+  @apply flex flex-col items-center p-xs sm:p-lg 
+}
+
+.postpage__container h2 {
+  @apply  bg-gradient-to-r bg-clip-text font-bold text-2xl sm:text-3xl text-transparent p-xlg from-secondary to-button text-center;
+}
+
+.postpage__container h3 {
+  @apply bg-gradient-to-r bg-clip-text font-bold text-xl sm:text-2xl text-transparent py-lg from-secondary to-button;
+}
+
+.postpage__container__title {
+  @apply my-xxlg text-4xl sm:text-5xl md:text-6xl text-transparent bg-gradient-to-r bg-clip-text from-primary to-secondary font-bold p-md
+}
