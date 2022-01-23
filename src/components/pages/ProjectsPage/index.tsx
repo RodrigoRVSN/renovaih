@@ -1,19 +1,12 @@
 import { CardProject } from '@App/components/elements/CardProject'
 import { ErrorGeneric } from '@App/components/elements/ErrorGeneric'
 import { LoaderSpinner } from '@App/components/elements/LoaderSpinner'
-import { fetchAllProjects } from '@App/core/services/fetchProjects'
+import { useFetchAllProjects } from '@App/core/services/fetchProjects'
 import { useSession } from 'next-auth/react'
-import { useQuery } from 'react-query'
 
 export default function ProjectsPage(): JSX.Element {
   const user = useSession()
-  const { data, isError, isLoading, refetch } = useQuery(
-    ['projects'],
-    fetchAllProjects,
-    {
-      staleTime: 24 * 60 * 60 * 1000 // 1 day
-    }
-  )
+  const { data, isError, isLoading, refetch } = useFetchAllProjects()
 
   if (isLoading) {
     return <LoaderSpinner loading={isLoading} className='mt-xxxlg' />

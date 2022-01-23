@@ -20,10 +20,12 @@ export interface IPrismicProject {
   }
 }
 
+interface IContext {
+  id: string
+  step: string
+}
+
 export interface IProjectStepsPageProps {
   project: string
-  content: {
-    id: string
-    step: string
-  }[]
+  content: IContext[]
 }

@@ -1,6 +1,6 @@
-import { IProjects } from '@App/core/types/IProjects'
+import { IProjects, IProjectStepsPageProps } from '@App/core/types/IProjects'
 
-export const projectsMock: IProjects[] = [
+const projectsMock: IProjects[] = [
   {
     id: '1',
     title: 'Energia solar',
@@ -22,3 +22,19 @@ export const projectsMock: IProjects[] = [
     project_slug: '2'
   }
 ]
+
+const projectStepsContentMock: IProjectStepsPageProps = {
+  project: 'protetor solar caseiro',
+  content: [
+    {
+      id: '1',
+      step: '<h1>fala galerinha</h1>'
+    },
+    {
+      id: '2',
+      step: '<h1>Passo 2</h1>'
+    }
+  ]
+}
+
+export { projectsMock, projectStepsContentMock }

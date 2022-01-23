@@ -12,8 +12,8 @@ const setup = () => {
     />
   )
 
-  const buttonPrevious = screen.getByTestId('previous')
-  const buttonNext = screen.getByTestId('next')
+  const buttonPrevious = screen.getByTestId('step__previous')
+  const buttonNext = screen.getByTestId('step__next')
 
   return {
     buttonPrevious,

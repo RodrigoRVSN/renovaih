@@ -8,7 +8,7 @@ export function ButtonSignIn(): JSX.Element {
   return (
     <>
       <button
-        className='text-text_contrast hover:text-secondary font-bold text-xl'
+        className='text-text_contrast hover:text-button font-bold text-xl'
         type='button'
         onClick={
           session ? () => router.push('/profile') : () => signIn('google')

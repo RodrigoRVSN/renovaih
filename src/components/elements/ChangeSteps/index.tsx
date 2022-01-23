@@ -22,7 +22,7 @@ export function ChangeSteps({
   return (
     <aside className='absolute flex items-center justify-between w-full'>
       <button
-        data-testid='previous'
+        data-testid='step__previous'
         className='change-step-button'
         disabled={actualStep - 1 < 0}
         onClick={handlePreviousStep}
@@ -30,9 +30,9 @@ export function ChangeSteps({
       >
         👈
       </button>
-      {actualStep}
+
       <button
-        data-testid='next'
+        data-testid='step__next'
         className='change-step-button'
         disabled={actualStep + 1 >= projects_length}
         onClick={() => handleNextStep()}

@@ -1,45 +1,26 @@
-import { ReactNode } from 'react'
 import { render, screen } from '@testing-library/react'
 import '@App/tests/utils/intersectionObserver'
 import { usersMock, usersMockApi } from '@App/tests/__mocks__/usersMock'
-import { QueryClient, QueryClientProvider } from 'react-query'
 import { renderHook } from '@testing-library/react-hooks'
 import { useFetchRanking } from '@App/core/services/fetchUsers'
 
 import AxiosMock from 'axios-mock-adapter'
 import { apiAxios, baseURL } from '@App/core/services/api'
 
+import { createWrapperQuery } from '@App/tests/utils/createWrapperQuery'
 import ProfilePage from '.'
 
 const apiMock = new AxiosMock(apiAxios)
 
-interface IWrapper {
-  children: ReactNode
-}
-
 jest.useRealTimers()
-
-const createWrapper = () => {
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false
-      }
-    }
-  })
-
-  return ({ children }: IWrapper) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  )
-}
 
 const setup = async () => {
   const { result, waitFor } = renderHook(() => useFetchRanking(), {
-    wrapper: createWrapper()
+    wrapper: createWrapperQuery()
   })
 
   const view = render(<ProfilePage user={usersMock[0]} />, {
-    wrapper: createWrapper()
+    wrapper: createWrapperQuery()
   })
 
   return { result, waitFor, ...view }
