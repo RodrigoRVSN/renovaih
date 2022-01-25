@@ -3,38 +3,33 @@ import ProfilePage from '@App/components/pages/ProfilePage'
 import { GetServerSideProps } from 'next'
 import { Session } from 'next-auth'
 import { getSession } from 'next-auth/react'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 
 type IProfile = { data: Session }
 
 export default function Profile({ data }: IProfile): JSX.Element {
-  const router = useRouter()
-
-  useEffect(() => {
-    if (!data) {
-      router.push('/')
-    }
-  }, [data, router])
-
-  if (!data?.user) {
-    return <h1>loading...</h1>
-  }
-
   return (
     <>
       <SEO
-        title={`${data.user.name} | Renovaíh`}
+        title={`${String(data?.user?.name)} | Renovaíh`}
         description='No Renovaih você aprender sobre ambientes se divertindo'
       />
 
-      <ProfilePage user={data.user} />
+      <ProfilePage user={data.user!} />
     </>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const data = await getSession(ctx)
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const data = await getSession({ req })
+
+  if (!data?.user) {
+    return {
+      redirect: {
+        destination: `/`,
+        permanent: false
+      }
+    }
+  }
 
   return {
     props: { data }

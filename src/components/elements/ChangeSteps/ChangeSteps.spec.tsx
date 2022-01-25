@@ -1,14 +1,16 @@
+/* eslint-disable no-use-before-define */
+import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { ChangeSteps } from '.'
 
-const mockActualtStep = jest.fn()
+const handleChange = jest.fn()
 
 const setup = () => {
   const view = render(
     <ChangeSteps
-      actualStep={0}
-      setActualStep={mockActualtStep}
-      projects_length={2}
+      actualStep={2}
+      setActualStep={handleChange}
+      projects_length={4}
     />
   )
 
@@ -30,14 +32,12 @@ describe('<ChangeSteps />', () => {
     expect(buttonNext).toBeInTheDocument()
   })
 
-  it('Should not click in disabled  button', async () => {
+  it('Should click buttons', async () => {
     const { buttonPrevious, buttonNext } = setup()
 
-    fireEvent.click(buttonPrevious)
-    expect(buttonPrevious).toHaveProperty('disabled')
-    expect(mockActualtStep).toBeCalledTimes(0)
-
     fireEvent.click(buttonNext)
-    expect(mockActualtStep).toBeCalledTimes(1)
+    fireEvent.click(buttonPrevious)
+
+    expect(handleChange).toBeCalledTimes(2)
   })
 })

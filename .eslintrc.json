@@ -74,6 +74,7 @@
     "testing-library/no-node-access": "off",
     "testing-library/no-await-sync-query": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "react/jsx-filename-extension": [
       1,
       {

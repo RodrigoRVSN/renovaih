@@ -26,6 +26,6 @@ interface IContext {
 }
 
 export interface IProjectStepsPageProps {
-  project: string
+  project?: string
   content: IContext[]
 }

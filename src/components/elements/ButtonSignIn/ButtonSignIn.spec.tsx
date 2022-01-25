@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { useRouter } from 'next/router'
-import { useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import { usersMock } from '@App/tests/__mocks__/usersMock'
 import { ButtonSignIn } from '.'
 
@@ -36,6 +36,7 @@ describe('<ButtonSignIn />', () => {
 
   it('Should create a session', () => {
     const useSessionMocked = jest.mocked(useSession)
+    const signInMocked = jest.mocked(signIn)
 
     useSessionMocked.mockReturnValue({
       data: null,
@@ -44,6 +45,20 @@ describe('<ButtonSignIn />', () => {
 
     render(<ButtonSignIn />)
 
-    expect(screen.getByText(/Entrar/i)).toBeInTheDocument()
+    fireEvent.click(screen.getByText(/Entrar/i))
+    expect(signInMocked).toBeCalledWith('google')
+  })
+
+  it('Should render loading spinner getting session', () => {
+    const useSessionMocked = jest.mocked(useSession)
+
+    useSessionMocked.mockReturnValue({
+      data: null,
+      status: 'loading'
+    })
+
+    render(<ButtonSignIn />)
+
+    expect(screen.getByTestId('loading_spinner')).toBeInTheDocument()
   })
 })

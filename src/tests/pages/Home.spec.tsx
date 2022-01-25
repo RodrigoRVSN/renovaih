@@ -1,33 +1,51 @@
-import Home from '@App/pages'
+import { getPrismicClient } from '@App/core/services/prismic'
+import Home, { getStaticProps } from '@App/pages'
 import { render, screen } from '@testing-library/react'
 import '../utils/intersectionObserver'
+import { postsMock } from '../__mocks__/postsMock'
 
 jest.mock('next-auth/react', () => {
   return {
     useSession: () => [null, false]
   }
 })
+jest.mock('@App/core/services/prismic')
 
-const posts = [
-  {
-    slug: '1',
-    title: 'Energia Solar',
-    summary: 'Resumo elaborado sobre o post',
-    image: 'foto_do_zoro.png',
-    content: 'Conteúdo do site bem completo e conteudista'
-  }
-]
-
-describe('Home page', () => {
-  it('should renders correctly', () => {
-    render(<Home posts={posts} />)
-
+describe('Home Page', () => {
+  it('Should render HomePage correctly', async () => {
+    render(<Home posts={postsMock} />)
     expect(screen.getByText(/energia solar/i)).toBeInTheDocument()
-    expect(
-      screen.getByText(/Resumo elaborado sobre o post/i)
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('button', { name: /bora trabalhar/i })
-    ).toBeInTheDocument()
+  })
+
+  it('Should load the initial data in Home', async () => {
+    const getPrismicClientMocked = jest.mocked(getPrismicClient)
+
+    getPrismicClientMocked.mockResolvedValueOnce({
+      getAllByType: jest.fn().mockResolvedValueOnce([
+        {
+          uid: 'new-post',
+          data: {
+            title: [{ text: '1' }],
+            summary: [{ text: '1' }],
+            post_image: { url: 'zoro.png' }
+          }
+        }
+      ])
+    } as any)
+
+    const response = await getStaticProps({})
+
+    expect(response).toEqual(
+      expect.objectContaining({
+        props: {
+          posts: [
+            { slug: 'new-post', title: '1', summary: '1', image: 'zoro.png' }
+          ]
+        }
+      })
+    )
+
+    render(<Home posts={postsMock} />)
+    expect(screen.getByText(/energia solar/i)).toBeInTheDocument()
   })
 })

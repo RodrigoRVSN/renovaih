@@ -1,6 +1,6 @@
 import { Header } from '@App/components/layout/Header'
 import NavItem from '@App/components/layout/Header/NavItem'
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 
 jest.mock('next-auth/react', () => {
   return {
@@ -21,5 +21,13 @@ describe('<Header />', () => {
     render(<NavItem href='/profile' title='Perfil' />)
 
     expect(screen.getByText(/perfil/i)).toHaveAttribute('href', '/profile')
+  })
+
+  it('Should toggle responsive menu', () => {
+    render(<Header />)
+
+    expect(screen.getByRole('navigation')).toHaveClass('hidden')
+    fireEvent.click(screen.getByTestId('toggle__button'))
+    expect(screen.getByRole('navigation')).toHaveClass('flex-col')
   })
 })

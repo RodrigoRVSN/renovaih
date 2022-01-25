@@ -24,6 +24,7 @@ export function Header(): JSX.Element {
       <NavGroup menuOpen={menuOpen} />
 
       <button
+        data-testid='toggle__button'
         type='button'
         className='absolute bg-card block md:hidden p-xs right-xxs space-y-xxs  rounded shadow cursor-pointer'
         onClick={() => handleOpenMenu()}
