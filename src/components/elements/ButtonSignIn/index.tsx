@@ -1,9 +1,14 @@
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
+import { LoaderSpinner } from '../LoaderSpinner'
 
 export function ButtonSignIn(): JSX.Element {
-  const { data: session } = useSession()
+  const { data: session, status } = useSession()
   const router = useRouter()
+
+  if (status === 'loading') {
+    return <LoaderSpinner loading />
+  }
 
   return (
     <>
