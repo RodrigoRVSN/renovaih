@@ -16,15 +16,13 @@ async function fetchAllUsers(): Promise<IUserInfo[]> {
 }
 
 const useFetchRanking = () => {
-  const { data, isError, isLoading, refetch, isSuccess } = useQuery(
+  return useQuery(
     ['ranking_users'],
     fetchAllUsers,
     {
       staleTime: 24 * 60 * 60 * 1000 // 1 day
     }
   )
-
-  return { data, isError, isLoading, refetch, isSuccess }
 }
 
 export { fetchAllUsers, useFetchRanking }

@@ -15,15 +15,13 @@ async function fetchAllProjects(): Promise<IProjects[]> {
 }
 
 const useFetchAllProjects = () => {
-  const { data, isError, isLoading, refetch, isSuccess } = useQuery(
+  return useQuery(
     ['projects'],
     fetchAllProjects,
     {
       staleTime: 24 * 60 * 60 * 1000 // 1 day
     }
   )
-
-  return { data, isError, isLoading, refetch, isSuccess }
 }
 
 export { fetchAllProjects, useFetchAllProjects }
