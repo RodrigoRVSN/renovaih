@@ -15,13 +15,8 @@ export function CardProject({
   project_index,
   points
 }: ICardProject): JSX.Element {
-  const unavailableProject = useMemo(() => {
-    return project_index > points
-  }, [project_index, points])
-
-  const hasDoneProject = useMemo(() => {
-    return project_index < points
-  }, [project_index, points])
+  const unavailableProject =  project_index > points
+  const hasDoneProject = project_index < points
 
   return (
     <motion.article
