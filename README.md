@@ -11,9 +11,7 @@
 ___
 <!--- #################### mudar badges #################### --->
 
-
-
-
+https://user-images.githubusercontent.com/75763403/151466227-8aa38f60-b098-4dea-aab7-a14c3ed4d296.mp4
 
 <!--- #################### mudar imagem exemplo #################### --->
 ___
@@ -38,6 +36,8 @@ ___
 - React query
 - Postgres
 - Next-themes
+- React-testing-library
+- Tailwind CSS
 
 <!--- #################### mudar ferramentas #################### --->
 
