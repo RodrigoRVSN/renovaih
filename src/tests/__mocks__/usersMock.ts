@@ -8,8 +8,7 @@ const usersMock: IUserInfo[] = [
     email: 'rodrigovictor81@gmail.com',
     points: 9000,
     rankingId: 1,
-    image:
-      'https://w7.pngwing.com/pngs/942/576/png-transparent-roronoa-zoro-one-piece-vegeta-character-one-piece-face-human-boy.png'
+    image: '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png'
   },
   {
     id: '2',
@@ -17,8 +16,7 @@ const usersMock: IUserInfo[] = [
     email: 'pereira@gmail.com',
     points: 6000,
     rankingId: 1,
-    image:
-      'https://w7.pngwing.com/pngs/942/576/png-transparent-roronoa-zoro-one-piece-vegeta-character-one-piece-face-human-boy.png'
+    image: '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png'
   }
 ]
 

@@ -6,8 +6,8 @@ describe('<Footer />', () => {
   it('Should render footer correctly', () => {
     render(<Footer />)
 
-    socialList.forEach((e) => {
-      expect(screen.getByText(e.title)).toBeInTheDocument()
+    socialList.forEach((contact) => {
+      expect(screen.getByText(contact.title)).toBeInTheDocument()
     })
   })
 })
