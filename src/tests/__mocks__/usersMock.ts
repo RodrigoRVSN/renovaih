@@ -1,5 +1,5 @@
-import { IUsersMockApi } from '@App/core/types/IUsersMockApi'
-import { IUserInfo } from '@App/core/types/next-auth'
+import { IUsersMockApi } from '@App/core/types/IUsersMockApi';
+import { IUserInfo } from '@App/core/types/next-auth';
 
 const usersMock: IUserInfo[] = [
   {
@@ -8,7 +8,7 @@ const usersMock: IUserInfo[] = [
     email: 'rodrigovictor81@gmail.com',
     points: 9000,
     rankingId: 1,
-    image: '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png'
+    image: '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png',
   },
   {
     id: '2',
@@ -16,14 +16,14 @@ const usersMock: IUserInfo[] = [
     email: 'pereira@gmail.com',
     points: 6000,
     rankingId: 1,
-    image: '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png'
-  }
-]
+    image: '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png',
+  },
+];
 
 const usersMockApi: IUsersMockApi[] = [
   {
-    User: [...usersMock]
-  }
-]
+    User: [...usersMock],
+  },
+];
 
-export { usersMock, usersMockApi }
+export { usersMock, usersMockApi };

@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import { ChangeSteps } from '@App/components/elements/ChangeSteps'
-import { IProjectStepsPageProps } from '@App/core/types/IProjects'
-import { ButtonFinishProject } from '@App/components/elements/ButtonFinishProject'
-import styles from './styles.module.css'
+import { useState } from 'react';
+import { ButtonFinishProject } from '@App/components/elements/ButtonFinishProject';
+import { ChangeSteps } from '@App/components/elements/ChangeSteps';
+import { IProjectStepsPageProps } from '@App/core/types/IProjects';
+import styles from './styles.module.css';
 
 export default function ProjectStepsPage({
   project,
-  content
+  content,
 }: IProjectStepsPageProps): JSX.Element {
-  const [actualStep, setActualStep] = useState(0)
+  const [actualStep, setActualStep] = useState(0);
 
   return (
     <>
@@ -22,7 +22,7 @@ export default function ProjectStepsPage({
         />
       </header>
 
-      <section className='flex flex-col items-center justify-center mt-xxxlg'>
+      <section className="flex flex-col items-center justify-center mt-xxxlg">
         <div
           dangerouslySetInnerHTML={{ __html: content[actualStep].step }}
           className={styles.step__container}
@@ -30,5 +30,5 @@ export default function ProjectStepsPage({
         {actualStep === content.length - 1 && <ButtonFinishProject />}
       </section>
     </>
-  )
+  );
 }

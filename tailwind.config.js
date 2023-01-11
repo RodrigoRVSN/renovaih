@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ['./src/pages/*', './src/components/**/*.tsx'],
@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['Poppins', ...defaultTheme.fontFamily.mono]
-      }
+        mono: ['Poppins', ...defaultTheme.fontFamily.mono],
+      },
     },
 
     spacing: {
@@ -26,7 +26,7 @@ module.exports = {
       card_w: '300px',
       project_w: '550px',
       ranking_w: '550px',
-      card_min_w: '250px'
+      card_min_w: '250px',
     },
 
     colors: {
@@ -42,11 +42,11 @@ module.exports = {
       start_button: '#2a9d8f',
       text: '#302c2c',
       text_contrast: '#FFFFFF',
-      dark_contrast: '#2b2d42'
-    }
+      dark_contrast: '#2b2d42',
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
-}
+  plugins: [],
+};

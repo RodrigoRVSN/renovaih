@@ -1,8 +1,8 @@
-import { Ranking } from '@App/components/widgets/Ranking'
-import { UserProfile } from '@App/components/widgets/UserProfile'
-import { IUserInfo } from '@App/core/types/next-auth'
+import { Ranking } from '@App/components/widgets/Ranking';
+import { UserProfile } from '@App/components/widgets/UserProfile';
+import { IUserInfo } from '@App/core/types/next-auth';
 
-type IProfilePage = { user: IUserInfo }
+type IProfilePage = { user: IUserInfo };
 
 export default function ProfilePage({ user }: IProfilePage): JSX.Element {
   return (
@@ -10,5 +10,5 @@ export default function ProfilePage({ user }: IProfilePage): JSX.Element {
       <UserProfile user={user} />
       <Ranking />
     </>
-  )
+  );
 }

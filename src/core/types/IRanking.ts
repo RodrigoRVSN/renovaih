@@ -1,7 +1,7 @@
-import { IUserInfo } from './next-auth'
+import { IUserInfo } from './next-auth';
 
 export interface IRanking {
   data: {
-    User: IUserInfo[]
-  }[]
+    User: IUserInfo[];
+  }[];
 }

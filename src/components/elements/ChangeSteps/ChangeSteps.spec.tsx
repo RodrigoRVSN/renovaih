@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import { ChangeSteps } from '.'
+import { render, screen, fireEvent } from '@testing-library/react';
+import { ChangeSteps } from '.';
 
-const handleChange = jest.fn()
+const handleChange = jest.fn();
 
 const setup = () => {
   const view = render(
@@ -10,32 +10,32 @@ const setup = () => {
       setActualStep={handleChange}
       projects_length={4}
     />
-  )
+  );
 
-  const buttonPrevious = screen.getByTestId('step__previous')
-  const buttonNext = screen.getByTestId('step__next')
+  const buttonPrevious = screen.getByTestId('step__previous');
+  const buttonNext = screen.getByTestId('step__next');
 
   return {
     buttonPrevious,
     buttonNext,
-    ...view
-  }
-}
+    ...view,
+  };
+};
 
 describe('<ChangeSteps />', () => {
   it('Should render buttons to change Steps correctly', () => {
-    const { buttonPrevious, buttonNext } = setup()
+    const { buttonPrevious, buttonNext } = setup();
 
-    expect(buttonPrevious).toBeInTheDocument()
-    expect(buttonNext).toBeInTheDocument()
-  })
+    expect(buttonPrevious).toBeInTheDocument();
+    expect(buttonNext).toBeInTheDocument();
+  });
 
   it('should be able to call handleChange props when click buttons', () => {
-    const { buttonPrevious, buttonNext } = setup()
+    const { buttonPrevious, buttonNext } = setup();
 
-    fireEvent.click(buttonNext)
-    fireEvent.click(buttonPrevious)
+    fireEvent.click(buttonNext);
+    fireEvent.click(buttonPrevious);
 
-    expect(handleChange).toBeCalledTimes(2)
-  })
-})
+    expect(handleChange).toBeCalledTimes(2);
+  });
+});

@@ -1,5 +1,5 @@
-import { IUserInfo } from './next-auth'
+import { IUserInfo } from './next-auth';
 
 export interface IUsersMockApi {
-  User: IUserInfo[]
+  User: IUserInfo[];
 }

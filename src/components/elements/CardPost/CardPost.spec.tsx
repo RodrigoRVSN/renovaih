@@ -1,44 +1,44 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import '@App/tests/utils/intersectionObserver'
-import { useRouter } from 'next/router'
-import { postsMock } from '@App/tests/__mocks__/postsMock'
-import { CardPost } from '.'
+import { render, screen, fireEvent } from '@testing-library/react';
+import { useRouter } from 'next/router';
+import { postsMock } from '@App/tests/__mocks__/postsMock';
+import '@App/tests/utils/intersectionObserver';
+import { CardPost } from '.';
 
-jest.mock('next/router')
+jest.mock('next/router');
 
 const setup = () => {
-  const useRouterMocked = jest.mocked(useRouter)
-  const pushMock = jest.fn()
+  const useRouterMocked = jest.mocked(useRouter);
+  const pushMock = jest.fn();
 
   useRouterMocked.mockReturnValueOnce({
-    push: pushMock
-  } as any)
+    push: pushMock,
+  } as any);
 
-  const view = render(<CardPost post={postsMock[0]} />)
+  const view = render(<CardPost post={postsMock[0]} />);
 
-  const button = screen.getByText(/Bora trabalhar!/i)
-  const title = screen.getByText(/energia solar/i)
+  const button = screen.getByText(/Bora trabalhar!/i);
+  const title = screen.getByText(/energia solar/i);
 
   return {
     button,
     title,
     pushMock,
-    ...view
-  }
-}
+    ...view,
+  };
+};
 
 describe('<CardPost />', () => {
   it('Should renders Card of Post correctly', () => {
-    const { button, title } = setup()
+    const { button, title } = setup();
 
-    expect(button).toBeInTheDocument()
-    expect(title).toBeInTheDocument()
-  })
+    expect(button).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
+  });
 
   it('Should redirect to /posts/[id]', () => {
-    const { button, pushMock } = setup()
+    const { button, pushMock } = setup();
 
-    fireEvent.click(button)
-    expect(pushMock).toBeCalledWith('/posts/1')
-  })
-})
+    fireEvent.click(button);
+    expect(pushMock).toBeCalledWith('/posts/1');
+  });
+});

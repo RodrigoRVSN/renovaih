@@ -1,40 +1,40 @@
-import { getPrismicClient } from '@App/core/services/prismic'
+import { render, screen } from '@testing-library/react';
+import { useRouter } from 'next/router';
+import { getPrismicClient } from '@App/core/services/prismic';
 import Project, {
   getStaticPaths,
-  getStaticProps
-} from '@App/pages/projects/[id]'
-import { projectStepsContentMock } from '@App/tests/__mocks__/projectsMock'
-import { render, screen } from '@testing-library/react'
-import { useRouter } from 'next/router'
+  getStaticProps,
+} from '@App/pages/projects/[id]';
+import { projectStepsContentMock } from '@App/tests/__mocks__/projectsMock';
 
-jest.mock('next/router')
-jest.mock('@App/core/services/prismic')
+jest.mock('next/router');
+jest.mock('@App/core/services/prismic');
 
 const setup = () => {
-  const useRouterMocked = jest.mocked(useRouter)
+  const useRouterMocked = jest.mocked(useRouter);
   useRouterMocked.mockReturnValueOnce({
     query: {
-      project_title: 'project_title'
-    }
-  } as any)
+      project_title: 'project_title',
+    },
+  } as any);
 
-  const view = render(<Project content={projectStepsContentMock.content} />)
+  const view = render(<Project content={projectStepsContentMock.content} />);
 
-  return { ...view }
-}
+  return { ...view };
+};
 
 describe('Project Page', () => {
   it('Should render Project Page correctly', async () => {
-    setup()
+    setup();
 
-    expect(screen.getByText(/project_title/i)).toBeInTheDocument()
-    expect(screen.getByText(/fala galerinha/i)).toBeInTheDocument()
-  })
+    expect(screen.getByText(/project_title/i)).toBeInTheDocument();
+    expect(screen.getByText(/fala galerinha/i)).toBeInTheDocument();
+  });
 
   it('Should load initial project data', async () => {
-    setup()
+    setup();
 
-    const getPrismicClientMocked = jest.mocked(getPrismicClient)
+    const getPrismicClientMocked = jest.mocked(getPrismicClient);
 
     getPrismicClientMocked.mockResolvedValueOnce({
       getByUID: jest.fn().mockResolvedValueOnce({
@@ -45,17 +45,17 @@ describe('Project Page', () => {
                 {
                   type: 'paragraph',
                   text: 'step_content',
-                  spans: []
-                }
-              ]
-            }
-          ]
-        }
-      })
-    } as any)
+                  spans: [],
+                },
+              ],
+            },
+          ],
+        },
+      }),
+    } as any);
 
-    const response = await getStaticProps({})
-    const responsePaths = await getStaticPaths({})
+    const response = await getStaticProps({});
+    const responsePaths = await getStaticPaths({});
 
     expect(response).toEqual(
       expect.objectContaining({
@@ -63,17 +63,17 @@ describe('Project Page', () => {
           content: [
             {
               id: 0,
-              step: '<p>step_content</p>'
-            }
-          ]
-        }
+              step: '<p>step_content</p>',
+            },
+          ],
+        },
       })
-    )
+    );
 
     expect(responsePaths).toEqual(
       expect.objectContaining({
-        paths: ['/projects/1', '/projects/2']
+        paths: ['/projects/1', '/projects/2'],
       })
-    )
-  })
-})
+    );
+  });
+});
