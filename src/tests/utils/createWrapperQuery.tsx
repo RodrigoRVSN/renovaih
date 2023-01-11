@@ -14,7 +14,9 @@ export const createWrapperQuery = () => {
     },
   });
 
-  return ({ children }: IWrapper) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
+  return function wrapper({ children }: IWrapper) {
+    return (
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    );
+  };
 };
