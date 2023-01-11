@@ -4,7 +4,7 @@ import { LoaderSpinner } from '@App/components/elements/LoaderSpinner'
 import { useFetchAllProjects } from '@App/core/services/fetchProjects'
 import { useSession } from 'next-auth/react'
 
-export default function ProjectsPage(): JSX.Element {
+export default function ProjectsPage() {
   const user = useSession()
   const { data, isError, isLoading, refetch } = useFetchAllProjects()
 
