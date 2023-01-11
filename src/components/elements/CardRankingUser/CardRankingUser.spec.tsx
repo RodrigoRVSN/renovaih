@@ -3,13 +3,13 @@ import { render, screen } from '@testing-library/react'
 import { CardRankingUser } from '.'
 
 describe('<CardRankingUser />', () => {
-  it('Should render User Card in ranking correctly', () => {
+  it('should be able to render User Card in ranking correctly', () => {
     render(<CardRankingUser index={1} user={usersMock[0]} />)
 
     expect(screen.getByAltText(/Foto de Rodrigo Victor/i)).toBeInTheDocument()
     expect(screen.getByRole('img')).toHaveAttribute(
       'src',
-      'https://w7.pngwing.com/pngs/942/576/png-transparent-roronoa-zoro-one-piece-vegeta-character-one-piece-face-human-boy.png'
+      '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png'
     )
 
     expect(screen.getByText(/1/i)).toBeInTheDocument()

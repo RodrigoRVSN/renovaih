@@ -38,13 +38,17 @@ describe('<ProjectsPage />', () => {
   })
 
   it('should be able to render Loading Spinner', () => {
+    apiMock.onGet(`${baseURL}/projects`).replyOnce(200, projectsMock)
+
     setupComponent()
 
     expect(screen.getByTestId('loading_spinner')).toBeInTheDocument()
   })
 
   it('should be able to render Error Generic Message', async () => {
-    apiMock.onGet(`${baseURL}/projects`).networkErrorOnce()
+    jest.spyOn(console, 'error').mockImplementation(() => null)
+
+    apiMock.onGet(`${baseURL}/projects`).replyOnce(400)
 
     setupComponent()
 

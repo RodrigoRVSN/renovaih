@@ -1,5 +1,5 @@
 /* eslint-disable testing-library/no-unnecessary-act */
-import { render, screen, fireEvent, act } from '@testing-library/react'
+import { render, screen, fireEvent, act, waitFor } from '@testing-library/react'
 import '@App/tests/utils/intersectionObserver'
 import { useRouter } from 'next/router'
 import axios from 'axios'
@@ -32,24 +32,24 @@ describe('<ButtonFinishProject />', () => {
       status: 'authenticated'
     })
 
-    await act(async () => {
-      render(<ButtonFinishProject />)
-
-      fireEvent.click(screen.getByText(/Voltar/i))
-
-      axiosMock.put.mockResolvedValueOnce({ data: { points: 3 } })
-      const response = await axios.put('/users/edit/1', {
-        points: 3
-      })
-
-      expect(axiosMock.put).toHaveBeenCalledWith(`/users/edit/1`, { points: 3 })
-
-      expect(response).toStrictEqual({
-        data: {
-          points: 3
-        }
-      })
-      expect(pushMock).toBeCalledWith('/')
+    axiosMock.put.mockResolvedValueOnce({ data: { points: 3 } })
+    const response = await axios.put('/users/edit/1', {
+      points: 3
     })
+
+    render(<ButtonFinishProject />)
+
+    fireEvent.click(screen.getByText(/Voltar/i))
+
+    await waitFor(() => {
+      expect(axiosMock.put).toHaveBeenCalledWith('/users/edit/1', { points: 3 })
+    })
+
+    expect(response).toStrictEqual({
+      data: {
+        points: 3
+      }
+    })
+    expect(pushMock).toBeCalledWith('/')
   })
 })

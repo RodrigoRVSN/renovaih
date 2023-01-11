@@ -3,7 +3,7 @@ import { CardRankingUser } from '@App/components/elements/CardRankingUser'
 import { LoaderSpinner } from '@App/components/elements/LoaderSpinner'
 import { ErrorGeneric } from '@App/components/elements/ErrorGeneric'
 
-export function Ranking(): JSX.Element {
+export function Ranking() {
   const { data, isError, isLoading, refetch } = useFetchRanking()
 
   if (isLoading) {

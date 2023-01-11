@@ -10,12 +10,12 @@ export function ChangeSteps({
   actualStep,
   setActualStep,
   projects_length
-}: IChangeStepsProps): JSX.Element {
-  function handleNextStep(): void {
+}: IChangeStepsProps) {
+  function handleNextStep() {
     setActualStep((prevState) => prevState + 1)
   }
 
-  function handlePreviousStep(): void {
+  function handlePreviousStep() {
     setActualStep((prevState) => prevState - 1)
   }
 
@@ -35,7 +35,7 @@ export function ChangeSteps({
         data-testid='step__next'
         className='change-step-button'
         disabled={actualStep + 1 >= projects_length}
-        onClick={() => handleNextStep()}
+        onClick={handleNextStep}
         type='button'
       >
         👉

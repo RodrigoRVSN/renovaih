@@ -5,13 +5,13 @@ import { useState } from 'react'
 import { ErrorGeneric } from '../ErrorGeneric'
 import { LoaderSpinner } from '../LoaderSpinner'
 
-export function ButtonFinishProject(): JSX.Element {
+export function ButtonFinishProject() {
   const router = useRouter()
   const { data } = useSession()
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
 
-  async function handleFinishProject(): Promise<void> {
+  async function handleFinishProject() {
     if (data?.user) {
       try {
         setIsLoading(true)
@@ -22,7 +22,6 @@ export function ButtonFinishProject(): JSX.Element {
         setIsError(true)
       } finally {
         await router.replace('/')
-        window.location.reload()
         setIsLoading(false)
       }
     }
