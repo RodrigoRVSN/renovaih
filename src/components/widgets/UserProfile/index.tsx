@@ -21,6 +21,7 @@ export function UserProfile({ user }: IProfilePage): JSX.Element {
         className='absolute top-xxs right-xxs z-50'
       />
       <Image
+        alt='Foto do usuário'
         src={String(user.image)}
         width={128}
         height={128}

@@ -27,6 +27,7 @@ export function CardProject({
       } mx-auto p-xmd rounded-2xl lg:w-project_w`}
     >
       <Image
+        alt={`Projeto ${project.title}`}
         width={170}
         height={150}
         layout='fixed'

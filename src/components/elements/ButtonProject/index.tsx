@@ -27,6 +27,7 @@ export function ButtonProject({
   return unavailable || done ? (
     <motion.div whileHover={{ scale: 2 }}>
       <Image
+        alt='Atividade bloqueada'
         data-testid='blocked'
         layout='fixed'
         width={20}
