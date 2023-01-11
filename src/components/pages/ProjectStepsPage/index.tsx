@@ -14,6 +14,7 @@ export default function ProjectStepsPage({
     <>
       <header className={styles.header__container}>
         <h1 className={styles.header__container__title}>{project}</h1>
+
         <ChangeSteps
           actualStep={actualStep}
           setActualStep={setActualStep}

@@ -44,9 +44,14 @@ describe('<ProjectStepsPage />', () => {
 
     fireEvent.click(buttonNext)
     expect(buttonPrevious).toBeEnabled()
+
     expect(screen.queryByText(/fala galerinha/i)).not.toBeInTheDocument()
     expect(screen.getByText(/passo 2/i)).toBeInTheDocument()
     expect(buttonNext).toBeDisabled()
+
     expect(screen.getByText(/voltar/i)).toBeInTheDocument()
+
+    fireEvent.click(buttonPrevious)
+    expect(screen.getByText(/fala galerinha/i)).toBeInTheDocument()
   })
 })

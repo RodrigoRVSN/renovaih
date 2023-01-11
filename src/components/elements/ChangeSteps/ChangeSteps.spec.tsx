@@ -1,5 +1,3 @@
-/* eslint-disable no-use-before-define */
-import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { ChangeSteps } from '.'
 
@@ -32,7 +30,7 @@ describe('<ChangeSteps />', () => {
     expect(buttonNext).toBeInTheDocument()
   })
 
-  it('Should click buttons', async () => {
+  it('should be able to call handleChange props when click buttons', () => {
     const { buttonPrevious, buttonNext } = setup()
 
     fireEvent.click(buttonNext)
