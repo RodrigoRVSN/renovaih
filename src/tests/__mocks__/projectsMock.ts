@@ -7,8 +7,7 @@ const projectsMock: IProjects[] = [
     summary:
       'Explore a física com este projeto sobre a termodinâmica, que nada mais é do que o estudo da física sobre temperaturas. Venha conosco nessa aventura, é muito fácil e divertido. Vem comigo?',
     level: '1',
-    image:
-      '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png',
+    image: '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png',
     project_slug: '1'
   },
   {
@@ -17,8 +16,7 @@ const projectsMock: IProjects[] = [
     summary:
       'Explore a física com este projeto sobre a termodinâmica, que nada mais é do que o estudo da física sobre temperaturas. Venha conosco nessa aventura, é muito fácil e divertido. Vem comigo?',
     level: '2',
-    image:
-      '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png',
+    image: '/renovaih-academ-rodrigorvsn.vercel.app/zoro.png',
     project_slug: '2'
   }
 ]

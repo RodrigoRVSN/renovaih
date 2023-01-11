@@ -1,7 +1,6 @@
 import { IProjects } from '@App/core/types/IProjects'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useMemo } from 'react'
 import { ButtonProject } from '../ButtonProject'
 
 interface ICardProject {
@@ -15,7 +14,7 @@ export function CardProject({
   project_index,
   points
 }: ICardProject): JSX.Element {
-  const unavailableProject =  project_index > points
+  const unavailableProject = project_index > points
   const hasDoneProject = project_index < points
 
   return (

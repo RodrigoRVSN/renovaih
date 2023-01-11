@@ -12,7 +12,7 @@ import ProjectsPage from '.'
 jest.useRealTimers()
 jest.mock('next-auth/react')
 
-  const useSessionMocked = jest.mocked(useSession)
+const useSessionMocked = jest.mocked(useSession)
 const apiMock = new AxiosMock(apiAxios)
 
 const setupComponent = () => {
@@ -45,11 +45,15 @@ describe('<ProjectsPage />', () => {
 
   it('should be able to render Error Generic Message', async () => {
     apiMock.onGet(`${baseURL}/projects`).networkErrorOnce()
-    
+
     setupComponent()
 
     await waitFor(() => {
-      expect(screen.getByText(/Houve um erro ao carregar os projetos, tente novamente!/i)).toBeInTheDocument()
+      expect(
+        screen.getByText(
+          /Houve um erro ao carregar os projetos, tente novamente!/i
+        )
+      ).toBeInTheDocument()
     })
   })
 
@@ -59,8 +63,9 @@ describe('<ProjectsPage />', () => {
     setupComponent()
 
     await waitFor(() => {
-      expect(screen.getByText(/energia solar/i)).toBeInTheDocument()  
-      expect(screen.getByText(/protetor solar/i)).toBeInTheDocument()
+      expect(screen.getByText(/energia solar/i)).toBeInTheDocument()
     })
+
+    expect(screen.getByText(/protetor solar/i)).toBeInTheDocument()
   })
 })
